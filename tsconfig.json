@@ -1,0 +1,107 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "noEmit": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "strictNullChecks": true,
+    "baseUrl": "src",
+    "paths": {
+      "@config": [
+        "config.js"
+      ],
+      "@styles/*": [
+        "application/styles/*"
+      ],
+      "@sharedViews/*": [
+        "shared/views/*"
+      ],
+      "@shared/*": [
+        "shared/*"
+      ],
+      "@widgets/*": [
+        "shared/widgets/*"
+      ],
+      "@application/*": [
+        "application/*"
+      ],
+      "@entities/*": [
+        "shared/entities/*"
+      ],
+      "@features/*": [
+        "shared/features/*"
+      ],
+      "@layout/*": [
+        "layout/*"
+      ],
+      "@public/*": [
+        "../public/*"
+      ],
+      "@/public/*": [
+        "../public/*"
+      ],
+      "@/config": [
+        "config.js"
+      ],
+      "@/context/*": [
+        "context/*"
+      ],
+      "@/styles/*": [
+        "application/styles/*"
+      ],
+      "@/store/*": [
+        "store/*"
+      ],
+      "@/views/*": [
+        "shared/views/*"
+      ],
+      "@/shared/*": [
+        "shared/*"
+      ],
+      "@/widgets/*": [
+        "shared/widgets/*"
+      ],
+      "@/application/*": [
+        "application/*"
+      ],
+      "@/entities/*": [
+        "shared/entities/*"
+      ],
+      "@/features/*": [
+        "shared/features/*"
+      ],
+      "@/areas/*": [
+        "areas/*"
+      ],
+      "@/layout/*": [
+        "layout/*"
+      ]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
