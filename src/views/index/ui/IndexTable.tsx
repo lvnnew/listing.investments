@@ -30,16 +30,14 @@ const rows = [
 export default function BasicTable() {
   const contextValue = useContext(LocaleContext);
 
-  console.log('contextValue', contextValue);
+  // console.log('contextValue', contextValue);
 
   return (
-    <LocaleContext.Consumer>
-      {
-        contextValue => (
-          <LTable lang={contextValue} />
-        )
-      }
-    </LocaleContext.Consumer>
+    <>
+      {contextValue}
+      <LTable />
+    </>
+
     // <TableContainer component={Paper}>
     //   <Table sx={{ minWidth: 650 }} aria-label="simple table">
     //     <TableHead>

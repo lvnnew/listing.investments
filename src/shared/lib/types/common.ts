@@ -10,4 +10,4 @@ export enum LOCALES {
   RU = "ru",
 }
 
-export const DEFAULT_LOCALE = LOCALES.DEFAULT;
+export const DEFAULT_LOCALE = LOCALES.EN;
