@@ -49,9 +49,18 @@ export default function IndexTable() {
 
   const lines = [
     {
-      [easyInvestPlatformsEntity.TITLE.fieldKey]: 'Заголовок 1',
-      [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Страна 1',
-      [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'Специализация 1',
+      [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+        en: 'Title 1',
+        ru: 'Заголовок 1',
+      },
+      [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+        en: 'Country 1',
+        ru: 'Страна 1',
+      },
+      [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+        en: 'Specialization 1',
+        ru: 'Специализация 1',
+      },
     }
   ];
 

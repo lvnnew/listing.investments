@@ -54,7 +54,7 @@ export function LTable({ columns, lines }) {
             >
               {columns.map((column, index) => (
                 <TableCell key={`line-${lineIndex}--cell-${column.fieldKey}`}>
-                  {line[column.fieldKey]}
+                  {line[column.fieldKey][locale]}
                 </TableCell>
               ))}
             </TableRow>
