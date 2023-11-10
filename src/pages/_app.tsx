@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import { appWithTranslation } from "next-i18next";
 // import { isEmpty } from "ramda";
 // import { Provider } from "mobx-react";
@@ -7,11 +7,10 @@ import { appWithTranslation } from "next-i18next";
 // import "normalize.css";
 import "@application/styles/global.scss";
 import "@application/styles/tippy.scss";
-import "@bestchange/fe-pub-ui/dist/fe-pub-ui.cjs.development.css";
 
 import { useSaveLanguage } from '@shared/lib/hooks/useSaveLanguage';
 // import { ToastProvider } from "@application/providers/ToastProvider";
-import { LocalizationProvider } from "@application/providers/LocalizationProvider";
+// import { LocalizationProvider } from "@application/providers/LocalizationProvider";
 // import initializeStore from "../store/mobxSsrStore";
 // import { useGlobalStore } from "@store/globalStore";
 
@@ -23,11 +22,11 @@ function MyApp(props: any) {
 
   return (
     // <Provider {...store}>
-      <LocalizationProvider>
+    //   <LocalizationProvider>
         {/*<ToastProvider>*/}
-          <>{getLayout(<Component {...pageProps} />)}</>
+          <>555{getLayout(<Component {...pageProps} />)}</>
         {/*</ToastProvider>*/}
-      </LocalizationProvider>
+      // </LocalizationProvider>
     // </Provider>
   );
 }
