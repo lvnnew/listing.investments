@@ -49,14 +49,16 @@ export default function IndexTable() {
 
   const lines = [
     {
-
+      [easyInvestPlatformsEntity.TITLE.fieldKey]: 'Заголовок 1',
+      [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Страна 1',
+      [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'Специализация 1',
     }
   ];
 
   return (
     <>
       {/*{contextValue}*/}
-      <LTable columns={columns} />
+      <LTable columns={columns} lines={lines} />
     </>
 
     // <TableContainer component={Paper}>

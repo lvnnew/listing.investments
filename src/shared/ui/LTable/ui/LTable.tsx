@@ -28,10 +28,9 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export function LTable({ columns }) {
+export function LTable({ columns, lines }) {
   const locale = useContext(LocaleContext);
 
-  // const getValueForCell = (line)
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -45,26 +44,19 @@ export function LTable({ columns }) {
                 }
               </TableCell>
             ))}
-
-            {/*<TableCell align="right">Calories</TableCell>*/}
-            {/*<TableCell align="right">Fat&nbsp;(g)</TableCell>*/}
-            {/*<TableCell align="right">Carbs&nbsp;(g)</TableCell>*/}
-            {/*<TableCell align="right">Protein&nbsp;(g)</TableCell>*/}
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
+          {lines.map((line, lineIndex) => (
             <TableRow
-              key={row.name}
+              key={line.name}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              <TableCell component="th" scope="row">
-                {row.name}
-              </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              {columns.map((column, index) => (
+                <TableCell key={`line-${lineIndex}--cell-${column.fieldKey}`}>
+                  {line[column.fieldKey]}
+                </TableCell>
+              ))}
             </TableRow>
           ))}
         </TableBody>
