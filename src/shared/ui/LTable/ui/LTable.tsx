@@ -36,14 +36,14 @@ const columns = [
   },
 ];
 
-export function LTable() {
+export function LTable({ lang }) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             {columns.map((column, index) => (
-              <TableCell key={column.fieldKey}>{column.fieldLabelLocals.EN} 123-{i18n?.language}</TableCell>
+              <TableCell key={column.fieldKey}>{column.fieldLabelLocals.EN} 123-{lang}</TableCell>
             ))}
 
             <TableCell align="right">Calories</TableCell>
