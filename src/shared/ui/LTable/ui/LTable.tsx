@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -6,7 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-import { i18n } from "next-i18next";
+// import { i18n } from "next-i18next";
+import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
 
 function createData(
   name,
@@ -26,30 +28,28 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-const columns = [
-  {
-    fieldKey: '',
-    fieldLabelLocals: {
-      EN: '',
-      RU: '',
-    },
-  },
-];
+export function LTable({ columns }) {
+  const locale = useContext(LocaleContext);
 
-export function LTable({ locale }) {
+  // const getValueForCell = (line)
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
             {columns.map((column, index) => (
-              <TableCell key={column.fieldKey}>{column.fieldLabelLocals.EN} 123-{locale}</TableCell>
+              <TableCell key={column.fieldKey}>
+                {column.fieldLabelLocals.valueMaker
+                  ? column.fieldLabelLocals[locale]
+                  : column.fieldLabelLocals[locale]
+                }
+              </TableCell>
             ))}
 
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            {/*<TableCell align="right">Calories</TableCell>*/}
+            {/*<TableCell align="right">Fat&nbsp;(g)</TableCell>*/}
+            {/*<TableCell align="right">Carbs&nbsp;(g)</TableCell>*/}
+            {/*<TableCell align="right">Protein&nbsp;(g)</TableCell>*/}
           </TableRow>
         </TableHead>
         <TableBody>

@@ -9,6 +9,8 @@ import Paper from '@mui/material/Paper';
 import { LTable } from '../../../shared/ui/LTable';
 import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
 
+import { easyInvestPlatformsEntity } from '../../../entities/easyInvestPlatforms';
+
 function createData(
   name,
   calories,
@@ -27,15 +29,34 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-export default function BasicTable() {
-  const contextValue = useContext(LocaleContext);
+export default function IndexTable() {
+  // const contextValue = useContext(LocaleContext);
 
-  // console.log('contextValue', contextValue);
+  const columns = [
+    {
+      ...easyInvestPlatformsEntity.TITLE,
+      valueMaker: (line) => (<>
+        <a href={line.link}>{line.title}</a>
+      </>),
+    },
+    {
+      ...easyInvestPlatformsEntity.COUNTRY,
+    },
+    {
+      ...easyInvestPlatformsEntity.SPECIALIZATION,
+    },
+  ];
+
+  const lines = [
+    {
+
+    }
+  ];
 
   return (
     <>
-      {contextValue}
-      <LTable />
+      {/*{contextValue}*/}
+      <LTable columns={columns} />
     </>
 
     // <TableContainer component={Paper}>
