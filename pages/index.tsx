@@ -10,7 +10,7 @@ export default function Index() {
   console.log('i18n', i18n);
 
   return (
-    <RootLayout locale={LOCALES.RU}>
+    <RootLayout locale={LOCALES.EN}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />

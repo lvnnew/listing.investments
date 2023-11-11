@@ -10,4 +10,8 @@ export enum LOCALES {
   RU = "ru",
 }
 
+export enum COOKIES {
+  LANGUAGE = "language",
+}
+
 export const DEFAULT_LOCALE = LOCALES.EN;
