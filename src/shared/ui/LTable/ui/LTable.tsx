@@ -36,7 +36,7 @@ export function LTable({ columns, lines }) {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            {columns.map((column, index) => (
+            {columns.map((column) => (
               <TableCell key={column.fieldKey}>
                 {column.fieldLabelLocals.valueMaker
                   ? column.fieldLabelLocals[locale]
