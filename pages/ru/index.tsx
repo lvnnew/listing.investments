@@ -4,7 +4,7 @@ import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
 import { IndexTable } from '@views/index';
 
-import { i18n } from "next-i18next";
+import { i18n } from 'next-i18next';
 
 export default function Index() {
   console.log('i18n', i18n);
@@ -15,8 +15,6 @@ export default function Index() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/*{i18n}*/}
 
       <IndexTable />
     </RootLayout>

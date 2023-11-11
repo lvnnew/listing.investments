@@ -36,6 +36,9 @@
       "@shared/*": [
         "shared/*"
       ],
+      "@views/*": [
+        "views/*"
+      ],
       "@widgets/*": [
         "shared/widgets/*"
       ],

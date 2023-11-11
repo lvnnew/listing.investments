@@ -27,8 +27,7 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Powered by{' '}
-            <img src="/vercel.svg" alt="Vercel" className={styles.logo} />
+            Listing.Investments, 2023
           </a>
         </footer>
 
