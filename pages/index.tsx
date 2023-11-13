@@ -1,13 +1,19 @@
 import Head from 'next/head';
+import { useEffect } from 'react';
+import { useTranslation } from "next-i18next";
 
 import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
 import { IndexTable } from '@views/index';
 
-import { i18n } from "next-i18next";
 
 export default function Index() {
-  console.log('i18n', i18n);
+  const { t, i18n } = useTranslation();
+
+  useEffect(() => {
+    console.log('i18n-after', i18n);
+    // code to run after render goes here
+  });
 
   return (
     <RootLayout locale={LOCALES.EN}>
