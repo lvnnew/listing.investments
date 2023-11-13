@@ -1,11 +1,5 @@
 import { ReactNode } from "react";
 import { appWithTranslation } from "next-i18next";
-// import "dayjs/locale/ru";
-// import "macro-css";
-// import "normalize.css";
-// import "@application/styles/global.scss";
-// import "@application/styles/tippy.scss";
-// import "@bestchange/fe-pub-ui/dist/fe-pub-ui.cjs.development.css";
 
 import { useSaveLanguage } from "@shared/lib/hooks/useSaveLanguage";
 
@@ -22,6 +16,7 @@ function MyApp(props: any) {
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   const { locale } = ctx;
+  // console.log(ctx);
 
   let pageProps = {};
   if (Component.getInitialProps) {

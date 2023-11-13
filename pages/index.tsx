@@ -1,18 +1,27 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useTranslation } from "next-i18next";
+import { useRouter } from 'next/router'
 
 import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
 import { IndexTable } from '@views/index';
 
+import { NextApiRequest } from 'next';
+
+import { getLang } from '@shared/lib/helpers/getLang';
 
 export default function Index() {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
+
+  console.log('getLang', getLang());
+
+
+  // const lang = req.query.lang as string;
+  console.log('i18n-before', i18n);
 
   useEffect(() => {
     console.log('i18n-after', i18n);
-    // code to run after render goes here
   });
 
   return (
