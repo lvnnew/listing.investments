@@ -5,9 +5,11 @@ import { LocaleProvider } from '@application/providers/LocaleProvider';
 import { DEFAULT_LOCALE } from '@shared/lib/types/common';
 import styles from '../../../styles/Home.module.css';
 import LHeader from './LHeader';
+import { useTranslation } from 'next-i18next';
 
 export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
   const defaultTheme = createTheme();
+  const { i18n, t } = useTranslation("common");
 
   return (
     <>
@@ -16,7 +18,7 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
         <LocaleProvider locale={locale}>
           <ThemeProvider theme={defaultTheme}>
             <main>
-            {children}
+              {children}
             </main>
           </ThemeProvider>
         </LocaleProvider>
@@ -29,8 +31,11 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
           >
             Listing.Investments, 2023
           </a>
-        </footer>
 
+          <pre>
+            {JSON.stringify(i18n)}
+          </pre>
+        </footer>
       </div>
 
       <style jsx>{`
@@ -41,6 +46,7 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
           display: flex;
           justify-content: center;
           align-items: center;
+            flex-direction: column;
         }
           main {
             padding: 5rem 0;

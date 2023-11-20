@@ -7,14 +7,13 @@ import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
 import { IndexTable } from '@views/index';
 
-import { NextApiRequest } from 'next';
-
 import { getLang } from '@shared/lib/helpers/getLang';
 
 export default function Index() {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation("common");
 
   console.log('getLang', getLang());
+  console.log('test', t("msg_003"));
 
 
   // const lang = req.query.lang as string;

@@ -16,7 +16,7 @@ function MyApp(props: any) {
 
 MyApp.getInitialProps = async ({ Component, ctx }: any) => {
   const { locale } = ctx;
-  // console.log(ctx);
+  console.log('ctx', ctx);
 
   let pageProps = {};
   if (Component.getInitialProps) {

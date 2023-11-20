@@ -14,4 +14,4 @@ export enum COOKIES {
   LANGUAGE = "language",
 }
 
-export const DEFAULT_LOCALE = LOCALES.EN;
+export const DEFAULT_LOCALE = LOCALES.DEFAULT;
