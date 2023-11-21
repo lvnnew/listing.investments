@@ -1,27 +1,25 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-import { LocaleProvider } from '@application/providers/LocaleProvider';
-import { DEFAULT_LOCALE } from '@shared/lib/types/common';
-import styles from '../../../styles/Home.module.css';
-import LHeader from './LHeader';
 import { useTranslation } from 'next-i18next';
 
-export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
+import styles from '../../../styles/Home.module.css';
+import LHeader from './LHeader';
+
+export default function RootLayout({ children }) {
   const defaultTheme = createTheme();
-  const { i18n, t } = useTranslation(["common"]);
+  const { t } = useTranslation("common");
 
   return (
     <>
       <div className={styles.container}>
         <LHeader />
-        <LocaleProvider locale={locale}>
+        {/*<LocaleProvider locale={locale}>*/}
           <ThemeProvider theme={defaultTheme}>
             <main>
               {children}
             </main>
           </ThemeProvider>
-        </LocaleProvider>
+        {/*</LocaleProvider>*/}
 
         <footer>
           <a
@@ -33,11 +31,14 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
           </a>
 
           <pre>
-            {JSON.stringify(i18n)}
+            {t('locale')}
           </pre>
-          <pre>
-            {JSON.stringify(i18n)}
-          </pre>
+          {/*<pre>*/}
+          {/*  {JSON.stringify(i18n)}*/}
+          {/*</pre>*/}
+          {/*<pre>*/}
+          {/*  {JSON.stringify(i18n)}*/}
+          {/*</pre>*/}
         </footer>
       </div>
 

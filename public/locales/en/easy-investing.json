@@ -1,0 +1,21 @@
+{
+  "locale": "en",
+  "localeLang": "English",
+  "tableColumnLabels": {
+    "TITLE": "Title",
+    "COUNTRY": "Country",
+    "SPECIALIZATION": "Specialization"
+  },
+  "lines": [
+    {
+      "TITLE": "Заголовок 1",
+      "COUNTRY": "Страна 1",
+      "SPECIALIZATION": "Специализация 1"
+    },
+    {
+      "TITLE": "Title 1",
+      "COUNTRY": "COUNTRY 1",
+      "SPECIALIZATION": "SPECIALIZATION 1"
+    }
+  ]
+}

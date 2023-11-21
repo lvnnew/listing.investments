@@ -1,16 +1,18 @@
 import Head from 'next/head';
 import { useEffect } from 'react';
 import { useTranslation } from "next-i18next";
-import { useRouter } from 'next/router'
-import type { GetStaticProps, InferGetStaticPropsType } from 'next'
+import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
 import { IndexTable } from '@views/index';
-
 import { getLang } from '@shared/lib/helpers/getLang';
 
-export default function Index(_props: InferGetStaticPropsType<typeof getStaticProps>) {
+type Props = {
+  // Add custom props here
+}
+
+const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
   // const { i18n, t } = useTranslation("common");
   const { t, i18n } = useTranslation('common')
 
@@ -26,15 +28,30 @@ export default function Index(_props: InferGetStaticPropsType<typeof getStaticPr
   });
 
   return (
-    <RootLayout locale={LOCALES.EN}>
+    <>
       <Head>
-        <title>Create Next App</title>
+        <title>My App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      {/*{i18n}*/}
-
-      <IndexTable />
-    </RootLayout>
+      <RootLayout>
+        {/*{i18n}*/}
+        <IndexTable />
+      </RootLayout>
+    </>
   );
 }
+
+// or getServerSideProps: GetServerSideProps<Props> = async ({ locale })
+export const getStaticProps: GetStaticProps<Props> = async ({
+                                                              locale,
+                                                            }) => ({
+  props: {
+    ...(await serverSideTranslations(locale ?? 'en', [
+      'common',
+      'easy-investing'
+    ])),
+  },
+})
+
+
+export default Index;
