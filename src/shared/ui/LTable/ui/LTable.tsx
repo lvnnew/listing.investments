@@ -9,12 +9,11 @@ import Paper from '@mui/material/Paper';
 import { i18n } from "next-i18next";
 
 export function LTable({ columns, lines }) {
-  const getShownValue = ({ line, fn }) => (
-    fn
-      ? fn(value)
-      : line[column]
+  const getShownValue = (column, columnIndex, line, lineIndex) => (
+    columns[columnIndex].valueMaker
+      ? columns[columnIndex].valueMaker(line, lineIndex)
+      : line[column.fieldKey][i18n?.resolvedLanguage || 'en']
   );
-
 
   return (
     <TableContainer component={Paper}>
@@ -36,12 +35,7 @@ export function LTable({ columns, lines }) {
             >
               {columns.map((column, columnIndex) => (
                 <TableCell key={`line-${lineIndex}--cell-${column.fieldKey}`}>
-                  {
-                    // column.fieldKey
-                    columns[columnIndex].valueMaker
-                      ? columns[columnIndex].valueMaker(line, lineIndex)
-                      : line[column.fieldKey][i18n?.resolvedLanguage || 'en']
-                  }
+                  {getShownValue(column, columnIndex, line, lineIndex)}
                 </TableCell>
               ))}
             </TableRow>
