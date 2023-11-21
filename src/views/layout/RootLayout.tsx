@@ -19,31 +19,43 @@ export default function RootLayout({ children }) {
 
   return (
     <>
-      <Container maxWidth="lg">
-        <div className={styles.container}>
-          <LHeader />
-          <LHeaderBlog title={'Listing.Investments'} sections={headerSections} style={{
-            width: '100%',
-          }} />
-          {/*<LocaleProvider locale={locale}>*/}
-            <ThemeProvider theme={defaultTheme}>
-              <main>
-                {children}
-              </main>
-            </ThemeProvider>
-          {/*</LocaleProvider>*/}
+      <ThemeProvider theme={defaultTheme}>
+        <div style={{
+          backgroundColor: defaultTheme.palette.mode === 'light'
+              ? defaultTheme.palette.grey[100]
+              : defaultTheme.palette.grey[900],
+          width: '100%',
+        }}>
+          <Container maxWidth="lg" sx={{
+            // backgroundColor: (theme) =>
+            //   theme.palette.mode === 'light'
+            //     ? theme.palette.grey[100]
+            //     : theme.palette.grey[900],
+          }}>
+            <div className={styles.container}>
+              {/*<LHeader />*/}
+              <LHeaderBlog title={'Listing.Investments'} sections={headerSections} style={{
+                width: '100%',
+              }} />
+              {/*<LocaleProvider locale={locale}>*/}
+                  <main>
+                    {children}
+                  </main>
+              {/*</LocaleProvider>*/}
 
-          <footer>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Listing.Investments, 2023
-            </a>
-          </footer>
+              <footer>
+                <a
+                  href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Listing.Investments, 2023
+                </a>
+              </footer>
+            </div>
+          </Container>
         </div>
-      </Container>
+      </ThemeProvider>
 
       <style jsx>{`
         footer {
