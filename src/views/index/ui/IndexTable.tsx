@@ -1,6 +1,7 @@
 import React  from "react";
 import { i18n, useTranslation } from 'next-i18next';
 import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
 
 import { LTable } from '@shared/ui/LTable';
 import { easyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
@@ -18,7 +19,7 @@ export default function IndexTable() {
       fieldKey: 'TITLE',
       fieldLabel: t('tableColumnLabels.TITLE'),
       valueMaker: (line) => (<>
-        <a href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</a>
+        <Link href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</Link>
       </>)
     },
     {
