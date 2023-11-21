@@ -3,7 +3,7 @@ import { i18n, useTranslation } from 'next-i18next';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
-import { LTable } from '@shared/ui/LTable';
+import { LTableSmart } from '@shared/ui/LTableSmart';
 import { easyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
@@ -43,7 +43,7 @@ export default function IndexTable() {
   return (
     <>
       {/*<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>*/}
-        <LTable columns={columns} lines={easyInvestPlatformsLines} />
+        <LTableSmart columns={columns} lines={easyInvestPlatformsLines} />
       {/*</Container>*/}
     </>
   );
