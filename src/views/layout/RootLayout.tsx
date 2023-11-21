@@ -1,36 +1,49 @@
 import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useTranslation } from 'next-i18next';
+import { Container } from '@mui/material';
 
 import styles from '../../../styles/Home.module.css';
 import LHeader from './LHeader';
+import LHeaderBlog from '@views/layout/LHeaderBlog';
 
 export default function RootLayout({ children }) {
   const defaultTheme = createTheme();
   const { t } = useTranslation("common");
 
+  const headerSections = [
+    { title: 'Рисковые инвестиции', url: '#' },
+    { title: 'В недвижимость на Бали', url: '#' },
+    { title: 'В недвижимость в Дубае', url: '#' },
+  ];
+
   return (
     <>
-      <div className={styles.container}>
-        <LHeader />
-        {/*<LocaleProvider locale={locale}>*/}
-          <ThemeProvider theme={defaultTheme}>
-            <main>
-              {children}
-            </main>
-          </ThemeProvider>
-        {/*</LocaleProvider>*/}
+      <Container maxWidth="lg">
+        <div className={styles.container}>
+          <LHeader />
+          <LHeaderBlog title={'Listing.Investments'} sections={headerSections} style={{
+            width: '100%',
+          }} />
+          {/*<LocaleProvider locale={locale}>*/}
+            <ThemeProvider theme={defaultTheme}>
+              <main>
+                {children}
+              </main>
+            </ThemeProvider>
+          {/*</LocaleProvider>*/}
 
-        <footer>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Listing.Investments, 2023
-          </a>
-        </footer>
-      </div>
+          <footer>
+            <a
+              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Listing.Investments, 2023
+            </a>
+          </footer>
+        </div>
+      </Container>
 
       <style jsx>{`
         footer {
