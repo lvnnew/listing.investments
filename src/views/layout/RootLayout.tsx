@@ -29,16 +29,6 @@ export default function RootLayout({ children }) {
           >
             Listing.Investments, 2023
           </a>
-
-          <pre>
-            {t('locale')}
-          </pre>
-          {/*<pre>*/}
-          {/*  {JSON.stringify(i18n)}*/}
-          {/*</pre>*/}
-          {/*<pre>*/}
-          {/*  {JSON.stringify(i18n)}*/}
-          {/*</pre>*/}
         </footer>
       </div>
 
