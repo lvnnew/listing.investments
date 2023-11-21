@@ -41,9 +41,9 @@ export default function IndexTable() {
 
   return (
     <>
-      <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+      {/*<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>*/}
         <LTable columns={columns} lines={easyInvestPlatformsLines} />
-      </Container>
+      {/*</Container>*/}
     </>
   );
 }
