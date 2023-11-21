@@ -9,7 +9,7 @@ import { useTranslation } from 'next-i18next';
 
 export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
   const defaultTheme = createTheme();
-  const { i18n, t } = useTranslation("common");
+  const { i18n, t } = useTranslation(["common"]);
 
   return (
     <>
@@ -32,6 +32,9 @@ export default function RootLayout({ locale = DEFAULT_LOCALE, children }) {
             Listing.Investments, 2023
           </a>
 
+          <pre>
+            {JSON.stringify(i18n)}
+          </pre>
           <pre>
             {JSON.stringify(i18n)}
           </pre>

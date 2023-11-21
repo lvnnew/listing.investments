@@ -1,13 +1,13 @@
 import { ReactNode } from "react";
 import { appWithTranslation } from "next-i18next";
 
-import { useSaveLanguage } from "@shared/lib/hooks/useSaveLanguage";
+// import { useSaveLanguage } from "@shared/lib/hooks/useSaveLanguage";
 
 function MyApp(props: any) {
   const { Component, pageProps, locale } = props;
   const getLayout = Component.getLayout ?? ((page: ReactNode) => page);
 
-  useSaveLanguage(locale);
+  // useSaveLanguage(locale);
 
   return (
     <>{getLayout(<Component {...pageProps} />)}</>

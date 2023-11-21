@@ -7,7 +7,7 @@ const { i18n } = require("./next-i18next.config");
 const localeSubpaths = {};
 
 module.exports = {
-  output: 'standalone',
+  // output: 'standalone',
   i18n,
   trailingSlash: false,
   poweredByHeader: false,
@@ -19,6 +19,10 @@ module.exports = {
     includePaths: [path.join(__dirname, "application/styles")],
     prependData: "@import \"~@styles/_vars.scss\"; @import \"~@styles/_glob.scss\";",
   },
+  // localePath:
+  //   typeof window === 'undefined'
+  //     ? require('path').resolve('./public/locales')
+  //     : '/locales',
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,
