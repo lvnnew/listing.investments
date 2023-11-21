@@ -47,8 +47,10 @@ export default function RootLayout({ children }) {
             flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            // background-color: #F3F6F9;
+            width: 100%;
+            // justify-content: center;
+            // align-items: center;
           }
         footer img {
           margin-left: 0.5rem;
