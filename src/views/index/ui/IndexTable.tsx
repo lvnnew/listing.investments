@@ -11,6 +11,7 @@ import { i18n, useTranslation } from 'next-i18next';
 
 import { easyInvestPlatformsEntity } from '../../../entities/easyInvestPlatforms';
 import { LTable } from '../../../shared/ui/LTable';
+import { easyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
 
 function createData(
   name,
@@ -66,39 +67,9 @@ export default function IndexTable() {
     },
   ];
 
-
-  const lines = [
-    {
-      [easyInvestPlatformsEntity.TITLE.fieldKey]: {
-        en: 'Bondora',
-        ru: 'Bondora',
-      },
-      [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
-        en: 'Estonia',
-        ru: 'Эстония',
-      },
-      [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
-        en: 'General',
-        ru: 'Общая',
-      },
-      [easyInvestPlatformsEntity.LINK.fieldKey]: {
-        en: 'https://www.bondora.com',
-        ru: 'https://www.bondora.com',
-      },
-      [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-        en: '6,81% - 14,81% in euro',
-        ru: '6,81% - 14,81% в евро',
-      },
-      [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
-        en: '10 euro',
-        ru: '10 евро',
-      },
-    }
-  ];
-
   return (
     <>
-      <LTable columns={columns} lines={lines} />
+      <LTable columns={columns} lines={easyInvestPlatformsLines} />
     </>
 
     // <TableContainer component={Paper}>
