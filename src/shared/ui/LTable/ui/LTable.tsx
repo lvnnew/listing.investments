@@ -7,8 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-// import { i18n } from "next-i18next";
-import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
+import { i18n } from "next-i18next";
+// import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
 
 function createData(
   name,
@@ -29,7 +29,12 @@ const rows = [
 ];
 
 export function LTable({ columns, lines }) {
-  const locale = useContext(LocaleContext);
+  const getShownValue = ({ line, fn }) => (
+    fn
+      ? fn(value)
+      : line[column]
+  );
+
 
   return (
     <TableContainer component={Paper}>
@@ -38,10 +43,7 @@ export function LTable({ columns, lines }) {
           <TableRow>
             {columns.map((column) => (
               <TableCell key={column.fieldKey}>
-                {column.fieldLabelLocals.valueMaker
-                  ? column.fieldLabelLocals[locale]
-                  : column.fieldLabelLocals[locale]
-                }
+                {column.fieldLabel}
               </TableCell>
             ))}
           </TableRow>
@@ -52,9 +54,14 @@ export function LTable({ columns, lines }) {
               key={`line-${lineIndex}`}
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
-              {columns.map((column, index) => (
+              {columns.map((column, columnIndex) => (
                 <TableCell key={`line-${lineIndex}--cell-${column.fieldKey}`}>
-                  {line[column.fieldKey][locale]}
+                  {
+                    // column.fieldKey
+                    line[column.fieldKey].valueMaker
+                      ? 'columns[columnIndex].valueMaker(line)'
+                      : line[column.fieldKey][i18n?.resolvedLanguage || 'en']
+                  }
                 </TableCell>
               ))}
             </TableRow>

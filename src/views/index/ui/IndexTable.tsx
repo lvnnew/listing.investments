@@ -6,10 +6,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { LTable } from '../../../shared/ui/LTable';
-import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
+import { useTranslation } from 'next-i18next';
+// import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
 
 import { easyInvestPlatformsEntity } from '../../../entities/easyInvestPlatforms';
+import { LTable } from '../../../shared/ui/LTable';
 
 function createData(
   name,
@@ -30,22 +31,26 @@ const rows = [
 ];
 
 export default function IndexTable() {
-  // const contextValue = useContext(LocaleContext);
+  const { t } = useTranslation('easy-investing');
 
   const columns = [
     {
-      ...easyInvestPlatformsEntity.TITLE,
+      fieldKey: 'TITLE',
+      fieldLabel: t('tableColumnLabels.TITLE'),
       valueMaker: (line) => (<>
         <a href={line.link}>{line.title}</a>
-      </>),
+      </>)
     },
     {
-      ...easyInvestPlatformsEntity.COUNTRY,
+      fieldKey: 'COUNTRY',
+      fieldLabel: t('tableColumnLabels.COUNTRY'),
     },
     {
-      ...easyInvestPlatformsEntity.SPECIALIZATION,
+      fieldKey: 'SPECIALIZATION',
+      fieldLabel: t('tableColumnLabels.SPECIALIZATION'),
     },
   ];
+
 
   const lines = [
     {
@@ -67,6 +72,7 @@ export default function IndexTable() {
   return (
     <>
       {/*{contextValue}*/}
+      {t("localeLang")}
       <LTable columns={columns} lines={lines} />
     </>
 
