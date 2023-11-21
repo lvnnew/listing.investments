@@ -5,6 +5,7 @@
     "TITLE": "Название",
     "COUNTRY": "Страна",
     "SPECIALIZATION": "Специализация",
+    "PROFITABILITY": "Доходность",
     "MINIMUM_INVEST_AMOUNT": "Минимальная сумма инвестиций"
   }
 }

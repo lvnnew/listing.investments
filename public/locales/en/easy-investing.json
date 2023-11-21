@@ -5,6 +5,7 @@
     "TITLE": "Title",
     "COUNTRY": "Country",
     "SPECIALIZATION": "Specialization",
+    "PROFITABILITY": "Profitability",
     "MINIMUM_INVEST_AMOUNT": "Minimum investment amount"
   }
 }

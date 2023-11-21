@@ -35,6 +35,13 @@ export default function IndexTable() {
 
   const columns = [
     {
+      fieldKey: 'ID',
+      fieldLabel: '#',
+      valueMaker: (line, lineIndex) => (<>
+        {lineIndex + 1}
+      </>)
+    },
+    {
       fieldKey: 'TITLE',
       fieldLabel: t('tableColumnLabels.TITLE'),
       valueMaker: (line) => (<>
@@ -52,6 +59,10 @@ export default function IndexTable() {
     {
       fieldKey: 'MINIMUM_INVEST_AMOUNT',
       fieldLabel: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
+    },
+    {
+      fieldKey: 'PROFITABILITY',
+      fieldLabel: t('tableColumnLabels.PROFITABILITY'),
     },
   ];
 
@@ -74,6 +85,10 @@ export default function IndexTable() {
         en: 'https://www.bondora.com',
         ru: 'https://www.bondora.com',
       },
+      [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+        en: '6,81% - 14,81% in euro',
+        ru: '6,81% - 14,81% в евро',
+      },
       [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
         en: '10 euro',
         ru: '10 евро',
@@ -83,8 +98,6 @@ export default function IndexTable() {
 
   return (
     <>
-      {/*{contextValue}*/}
-      {/*{t("localeLang")}*/}
       <LTable columns={columns} lines={lines} />
     </>
 

@@ -11,6 +11,9 @@ export const easyInvestPlatformsEntity = {
   LINK: {
     fieldKey: 'LINK'
   },
+  PROFITABILITY: {
+    fieldKey: 'PROFITABILITY'
+  },
   MINIMUM_INVEST_AMOUNT: {
     fieldKey: 'MINIMUM_INVEST_AMOUNT'
   },

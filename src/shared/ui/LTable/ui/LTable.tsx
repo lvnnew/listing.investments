@@ -59,7 +59,7 @@ export function LTable({ columns, lines }) {
                   {
                     // column.fieldKey
                     columns[columnIndex].valueMaker
-                      ? columns[columnIndex].valueMaker(line)
+                      ? columns[columnIndex].valueMaker(line, lineIndex)
                       : line[column.fieldKey][i18n?.resolvedLanguage || 'en']
                   }
                 </TableCell>
