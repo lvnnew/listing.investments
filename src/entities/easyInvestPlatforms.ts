@@ -1,23 +1,17 @@
 export const easyInvestPlatformsEntity = {
   TITLE: {
-    fieldKey: 'TITLE',
-    fieldLabelLocals: {
-      en: 'Title',
-      ru: 'Название',
-    },
+    fieldKey: 'TITLE'
   },
   COUNTRY: {
-    fieldKey: 'COUNTRY',
-    fieldLabelLocals: {
-      en: 'Country',
-      ru: 'Страна',
-    },
+    fieldKey: 'COUNTRY'
   },
   SPECIALIZATION: {
-    fieldKey: 'SPECIALIZATION',
-    fieldLabelLocals: {
-      en: 'Specialization',
-      ru: 'Специализация',
-    },
+    fieldKey: 'SPECIALIZATION'
+  },
+  LINK: {
+    fieldKey: 'LINK'
+  },
+  MINIMUM_INVEST_AMOUNT: {
+    fieldKey: 'MINIMUM_INVEST_AMOUNT'
   },
 }

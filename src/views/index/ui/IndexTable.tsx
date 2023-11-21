@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { useTranslation } from 'next-i18next';
+import { i18n, useTranslation } from 'next-i18next';
 // import { LocaleContext } from '@application/providers/LocaleProvider/lib/LocaleContext';
 
 import { easyInvestPlatformsEntity } from '../../../entities/easyInvestPlatforms';
@@ -38,7 +38,7 @@ export default function IndexTable() {
       fieldKey: 'TITLE',
       fieldLabel: t('tableColumnLabels.TITLE'),
       valueMaker: (line) => (<>
-        <a href={line.link}>{line.title}</a>
+        <a href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</a>
       </>)
     },
     {
@@ -49,22 +49,34 @@ export default function IndexTable() {
       fieldKey: 'SPECIALIZATION',
       fieldLabel: t('tableColumnLabels.SPECIALIZATION'),
     },
+    {
+      fieldKey: 'MINIMUM_INVEST_AMOUNT',
+      fieldLabel: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
+    },
   ];
 
 
   const lines = [
     {
       [easyInvestPlatformsEntity.TITLE.fieldKey]: {
-        en: 'Title 1',
-        ru: 'Заголовок 1',
+        en: 'Bondora',
+        ru: 'Bondora',
       },
       [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
-        en: 'Country 1',
-        ru: 'Страна 1',
+        en: 'Estonia',
+        ru: 'Эстония',
       },
       [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
-        en: 'Specialization 1',
-        ru: 'Специализация 1',
+        en: 'General',
+        ru: 'Общая',
+      },
+      [easyInvestPlatformsEntity.LINK.fieldKey]: {
+        en: 'https://www.bondora.com',
+        ru: 'https://www.bondora.com',
+      },
+      [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+        en: '10 euro',
+        ru: '10 евро',
       },
     }
   ];
@@ -72,7 +84,7 @@ export default function IndexTable() {
   return (
     <>
       {/*{contextValue}*/}
-      {t("localeLang")}
+      {/*{t("localeLang")}*/}
       <LTable columns={columns} lines={lines} />
     </>
 

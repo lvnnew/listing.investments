@@ -58,8 +58,8 @@ export function LTable({ columns, lines }) {
                 <TableCell key={`line-${lineIndex}--cell-${column.fieldKey}`}>
                   {
                     // column.fieldKey
-                    line[column.fieldKey].valueMaker
-                      ? 'columns[columnIndex].valueMaker(line)'
+                    columns[columnIndex].valueMaker
+                      ? columns[columnIndex].valueMaker(line)
                       : line[column.fieldKey][i18n?.resolvedLanguage || 'en']
                   }
                 </TableCell>
