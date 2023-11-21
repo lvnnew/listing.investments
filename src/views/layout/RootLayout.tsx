@@ -2,9 +2,23 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useTranslation } from 'next-i18next';
 import { Container } from '@mui/material';
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin', 'cyrillic'],
+})
+
+// export default function MyApp({ Component, pageProps }) {
+//   return (
+//     <main className={roboto.className}>
+//       <Component {...pageProps} />
+//     </main>
+//   )
+// }
 
 import styles from '../../../styles/Home.module.css';
-import LHeader from './LHeader';
+// import LHeader from './LHeader';
 import LHeaderBlog from '@views/layout/LHeaderBlog';
 
 export default function RootLayout({ children }) {
@@ -20,7 +34,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       <ThemeProvider theme={defaultTheme}>
-        <div style={{
+        <div className={roboto.className} style={{
           backgroundColor: defaultTheme.palette.mode === 'light'
               ? defaultTheme.palette.grey[100]
               : defaultTheme.palette.grey[900],
@@ -92,15 +106,15 @@ export default function RootLayout({ children }) {
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
-          font-family:
-            Menlo,
-            Monaco,
-            Lucida Console,
-            Liberation Mono,
-            DejaVu Sans Mono,
-            Bitstream Vera Sans Mono,
-            Courier New,
-            monospace;
+          // font-family:
+          //   Menlo,
+          //   Monaco,
+          //   Lucida Console,
+          //   Liberation Mono,
+          //   DejaVu Sans Mono,
+          //   Bitstream Vera Sans Mono,
+          //   Courier New,
+          //   monospace;
         }
       `}</style>
 
@@ -109,18 +123,6 @@ export default function RootLayout({ children }) {
           body {
             padding: 0;
             margin: 0;
-            font-family:
-              -apple-system,
-              BlinkMacSystemFont,
-              Segoe UI,
-              Roboto,
-              Oxygen,
-              Ubuntu,
-              Cantarell,
-              Fira Sans,
-              Droid Sans,
-              Helvetica Neue,
-              sans-serif;
           }
           * {
             box-sizing: border-box;
