@@ -2,12 +2,21 @@ import React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useTranslation } from 'next-i18next';
 import { Container } from '@mui/material';
-import { Roboto } from 'next/font/google';
+import { Roboto, Inter } from 'next/font/google';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ['latin', 'cyrillic'],
+  variable: '--font-roboto',
+  display: 'swap',
 })
+const inter = Inter({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
 
 // export default function MyApp({ Component, pageProps }) {
 //   return (
@@ -22,7 +31,11 @@ import styles from '../../../styles/Home.module.css';
 import LHeaderBlog from '@views/layout/LHeaderBlog';
 
 export default function RootLayout({ children }) {
-  const defaultTheme = createTheme();
+  const defaultTheme = createTheme({
+    typography: {
+      fontFamily: 'inherit',
+    },
+  });
   const { t } = useTranslation("common");
 
   const headerSections = [
@@ -40,22 +53,16 @@ export default function RootLayout({ children }) {
               : defaultTheme.palette.grey[900],
           width: '100%',
         }}>
-          <Container maxWidth="lg" sx={{
-            // backgroundColor: (theme) =>
-            //   theme.palette.mode === 'light'
-            //     ? theme.palette.grey[100]
-            //     : theme.palette.grey[900],
-          }}>
+          <Container maxWidth="lg">
             <div className={styles.container}>
               {/*<LHeader />*/}
               <LHeaderBlog title={'Listing.Investments'} sections={headerSections} style={{
                 width: '100%',
               }} />
-              {/*<LocaleProvider locale={locale}>*/}
-                  <main>
-                    {children}
-                  </main>
-              {/*</LocaleProvider>*/}
+
+              <main>
+                {children}
+              </main>
 
               <footer>
                 <a
@@ -123,6 +130,10 @@ export default function RootLayout({ children }) {
           body {
             padding: 0;
             margin: 0;
+            font-family: "Inter", "Times New Roman" !important;
+            // font-family: "Roboto", "Times New Roman";
+            // font-family: "Roboto", Arial, sans-serif;
+            // font-family: var(--font-roboto); // here
           }
           * {
             box-sizing: border-box;
