@@ -5,13 +5,14 @@ import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
 import {
-  easyInvestPlatformsLinesByLang,
+  localizeEasyInvestPlatformsLines,
   easyInvestPlatformsRows,
 } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
   const { i18n, t } = useTranslation('easy-investing');
-  console.log('langu-age', easyInvestPlatformsLinesByLang(i18n?.resolvedLanguage || 'en'));
+  // console.log('langu-age', localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en'));
+  const localizedEasyInvestPlatformsLines = localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en')
 
   const columns = [
     {
@@ -24,8 +25,8 @@ export default function IndexTable() {
       headerName: t('tableColumnLabels.TITLE'),
       renderCell: (line, lineIndex) => {
         console.log(line, lineIndex)
-        return <><Link href={line.row.LINK[i18n?.resolvedLanguage || 'en']}>
-          {line.row.TITLE[i18n?.resolvedLanguage || 'en']}
+        return <><Link href={line.row.LINK}>
+          {line.row.TITLE}
         </Link></>
       },
       width: 150,
@@ -53,7 +54,7 @@ export default function IndexTable() {
   return (
     <>
       {/*<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>*/}
-        <LTableSmart columns={columns} lines={easyInvestPlatformsRows} />
+        <LTableSmart columns={columns} lines={localizedEasyInvestPlatformsLines} />
       {/*</Container>*/}
     </>
   );

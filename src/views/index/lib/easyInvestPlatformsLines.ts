@@ -30,33 +30,23 @@ export const easyInvestPlatformsLines = [
   },
 ];
 
-export const easyInvestPlatformsLinesByLang =
+export const localizeEasyInvestPlatformsLines =
   language => easyInvestPlatformsLines.map(
-    platform => {
+    (platform, platformIndex: number) => {
       const platformKeys = Object.keys(platform);
       const returnedPlatform =
         platformKeys.reduce(
           (localizedPlatform: Object , platformKey) => {
-            // const returnedPlatformKey = platform[platformKey][language];
-            debugger
-            if (!localizedPlatform)
-              localizedPlatform = {};
             localizedPlatform[platformKey] = platform[platformKey][language];
             return localizedPlatform;
           },
           {} as Object,
         );
 
-      // debugger
+      returnedPlatform.id = platformIndex + 1;
       return returnedPlatform;
     },
   );
-
-// export const easyInvestPlatformsLinesRU = easyInvestPlatformsLines.map(platform => {
-//   return Object.keys(platform).map(platformKey => {
-//     return platformKey.
-//   })
-// });
 
 export const easyInvestPlatformsRows = [
   {
