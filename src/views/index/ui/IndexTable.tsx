@@ -1,5 +1,5 @@
 import React  from "react";
-import { i18n, useTranslation } from 'next-i18next';
+import { useTranslation } from 'next-i18next';
 import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
@@ -7,24 +7,24 @@ import { LTableSmart } from '@shared/ui/LTableSmart';
 import { easyInvestPlatformsRows } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
-  const { t } = useTranslation('easy-investing');
+  const { i18n, t } = useTranslation('easy-investing');
 
   const columns = [
     {
       field: 'id',
       headerName: '#',
-      valueGetter: (line, lineIndex) => (line) => (
-        Math.random()
-        // (<>{lineIndex + 1}</>)
-      )
+      width: 20,
     },
     {
       field: 'TITLE',
       headerName: t('tableColumnLabels.TITLE'),
-      valueGetter: (line) => (
-        `12345`
-        // <Link href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</Link>
-      )
+      renderCell: (line, lineIndex) => {
+        console.log(line, lineIndex)
+        return <><Link href={line.row.LINK[i18n?.resolvedLanguage || 'en']}>
+          {line.row.TITLE[i18n?.resolvedLanguage || 'en']}
+        </Link></>
+      },
+      width: 150,
     },
     {
       field: 'COUNTRY',
@@ -37,10 +37,12 @@ export default function IndexTable() {
     {
       field: 'MINIMUM_INVEST_AMOUNT',
       headerName: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
+      width: 200,
     },
     {
       field: 'PROFITABILITY',
       headerName: t('tableColumnLabels.PROFITABILITY'),
+      width: 200,
     },
   ];
 
