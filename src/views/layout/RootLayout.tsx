@@ -56,9 +56,7 @@ export default function RootLayout({ children }) {
           <Container maxWidth="lg">
             <div className={styles.container}>
               {/*<LHeader />*/}
-              <LHeaderBlog title={'Listing.Investments'} sections={headerSections} style={{
-                width: '100%',
-              }} />
+              <LHeaderBlog title={'Listing.Investments'} sections={headerSections} />
 
               <main>
                 {children}
@@ -89,7 +87,7 @@ export default function RootLayout({ children }) {
             flex-direction: column;
         }
           main {
-            padding: 5rem 0;
+            padding: 2rem 0;
             flex: 1;
             display: flex;
             flex-direction: column;

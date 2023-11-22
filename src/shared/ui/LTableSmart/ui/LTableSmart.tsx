@@ -52,7 +52,7 @@ export function LTableSmart({ columns, lines }) {
 
   return (
     <>
-    <div style={{ height: 400, width: '100%' }}>
+    <div style={{ width: '100%' }}>
       <DataGrid
         disableRowSelectionOnClick
         rows={rows}
