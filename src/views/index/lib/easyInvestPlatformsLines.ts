@@ -27,8 +27,31 @@ export const easyInvestPlatformsLines = [
       en: '10 euro',
       ru: '10 евро',
     },
-  }
+  },
 ];
+
+export const easyInvestPlatformsLinesByLang =
+  language => easyInvestPlatformsLines.map(
+    platform => {
+      const returnedPlatform =
+        Object.keys(platform).map(
+          platformKey => {
+            const returnedPlatformKey = platform[platformKey][language];
+            // debugger
+            return returnedPlatformKey;
+          },
+        );
+
+      // debugger
+      return returnedPlatform;
+    },
+  );
+
+// export const easyInvestPlatformsLinesRU = easyInvestPlatformsLines.map(platform => {
+//   return Object.keys(platform).map(platformKey => {
+//     return platformKey.
+//   })
+// });
 
 export const easyInvestPlatformsRows = [
   {
@@ -49,8 +72,8 @@ export const easyInvestPlatformsRows = [
   {
     id: 2,
     [easyInvestPlatformsEntity.TITLE.fieldKey]: {
-      en: 'Bondora',
-      ru: 'Bondora',
+      en: 'JetLend',
+      ru: 'JetLend',
     },
     [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Estonia',
     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'General',

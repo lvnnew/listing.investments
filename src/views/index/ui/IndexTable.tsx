@@ -4,10 +4,14 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
-import { easyInvestPlatformsRows } from '@views/index/lib/easyInvestPlatformsLines';
+import {
+  easyInvestPlatformsLinesByLang,
+  easyInvestPlatformsRows,
+} from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
   const { i18n, t } = useTranslation('easy-investing');
+  console.log('langu-age', easyInvestPlatformsLinesByLang(i18n?.resolvedLanguage || 'en'));
 
   const columns = [
     {
