@@ -4,46 +4,50 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
-import { easyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
+import { easyInvestPlatformsRows } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
   const { t } = useTranslation('easy-investing');
 
   const columns = [
     {
-      fieldKey: 'ID',
-      fieldLabel: '#',
-      valueMaker: (line, lineIndex) => (<>{lineIndex + 1}</>)
+      field: 'id',
+      headerName: '#',
+      valueGetter: (line, lineIndex) => (line) => (
+        Math.random()
+        // (<>{lineIndex + 1}</>)
+      )
     },
     {
-      fieldKey: 'TITLE',
-      fieldLabel: t('tableColumnLabels.TITLE'),
-      valueMaker: (line) => (<>
-        <Link href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</Link>
-      </>)
+      field: 'TITLE',
+      headerName: t('tableColumnLabels.TITLE'),
+      valueGetter: (line) => (
+        `12345`
+        // <Link href={line.LINK[i18n?.resolvedLanguage || 'en']}>{line.TITLE[i18n?.resolvedLanguage || 'en']}</Link>
+      )
     },
     {
-      fieldKey: 'COUNTRY',
-      fieldLabel: t('tableColumnLabels.COUNTRY'),
+      field: 'COUNTRY',
+      headerName: t('tableColumnLabels.COUNTRY'),
     },
     {
-      fieldKey: 'SPECIALIZATION',
-      fieldLabel: t('tableColumnLabels.SPECIALIZATION'),
+      field: 'SPECIALIZATION',
+      headerName: t('tableColumnLabels.SPECIALIZATION'),
     },
     {
-      fieldKey: 'MINIMUM_INVEST_AMOUNT',
-      fieldLabel: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
+      field: 'MINIMUM_INVEST_AMOUNT',
+      headerName: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
     },
     {
-      fieldKey: 'PROFITABILITY',
-      fieldLabel: t('tableColumnLabels.PROFITABILITY'),
+      field: 'PROFITABILITY',
+      headerName: t('tableColumnLabels.PROFITABILITY'),
     },
   ];
 
   return (
     <>
       {/*<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>*/}
-        <LTableSmart columns={columns} lines={easyInvestPlatformsLines} />
+        <LTableSmart columns={columns} lines={easyInvestPlatformsRows} />
       {/*</Container>*/}
     </>
   );
