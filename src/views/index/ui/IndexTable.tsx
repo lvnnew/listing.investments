@@ -11,20 +11,19 @@ import {
 
 export default function IndexTable() {
   const { i18n, t } = useTranslation('easy-investing');
-  // console.log('langu-age', localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en'));
   const localizedEasyInvestPlatformsLines = localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en')
 
   const columns = [
     {
       field: 'id',
       headerName: '#',
-      width: 20,
+      width: 30,
     },
     {
       field: 'TITLE',
       headerName: t('tableColumnLabels.TITLE'),
       renderCell: (line, lineIndex) => {
-        console.log(line, lineIndex)
+        // console.log(line, lineIndex)
         return <><Link href={line.row.LINK}>
           {line.row.TITLE}
         </Link></>
@@ -47,7 +46,7 @@ export default function IndexTable() {
     {
       field: 'PROFITABILITY',
       headerName: t('tableColumnLabels.PROFITABILITY'),
-      width: 200,
+      width: 250,
     },
   ];
 

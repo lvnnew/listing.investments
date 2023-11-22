@@ -1,6 +1,5 @@
 import { easyInvestPlatformsEntity } from '../../../entities/easyInvestPlatforms';
 
-
 export const easyInvestPlatformsLines = [
   {
     [easyInvestPlatformsEntity.TITLE.fieldKey]: {
@@ -26,6 +25,397 @@ export const easyInvestPlatformsLines = [
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '10 euro',
       ru: '10 евро',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'JetLand',
+      ru: 'JetLand',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Startups',
+      ru: 'Стартапы',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://jetlend.ru',
+      ru: 'https://jetlend.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '100 rubles',
+      ru: '100 рублей',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'MoneyFriends',
+      ru: 'MoneyFriends',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.moneyfriends.ru',
+      ru: 'https://www.moneyfriends.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '1 000 rubles',
+      ru: '1 000 рублей',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'TalanInvest',
+      ru: 'TalanInvest',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://talaninvest.ru',
+      ru: 'https://talaninvest.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: 'Up to 17% in rubles',
+      ru: 'До 17% в рублях',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '1 000 rubles',
+      ru: '1 000 рублей',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Funding Circle',
+      ru: 'Funding Circle',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Estonia',
+      ru: 'Эстония',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://estateguru.co',
+      ru: 'https://estateguru.co',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '500 pounds sterling',
+      ru: '500 фунтов стерлингов',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'EstateGuru',
+      ru: 'EstateGuru',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Great Britain',
+      ru: 'Великобритания',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Real estate',
+      ru: 'Недвижимость',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.fundingcircle.com',
+      ru: 'https://www.fundingcircle.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '7% — 13% in euros',
+      ru: '7% — 13% в евро',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '100 euro',
+      ru: '100 евро',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Kiva',
+      ru: 'Kiva',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Lending to the poor',
+      ru: 'Кредитование малоимущих',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.kiva.org',
+      ru: 'https://www.kiva.org',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$25',
+      ru: '$25',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'LendingClub',
+      ru: 'LendingClub',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General, p2p',
+      ru: 'Общий, p2p',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.lendingclub.com',
+      ru: 'https://www.lendingclub.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$25',
+      ru: '$25',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Prosper',
+      ru: 'Prosper',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General, p2p',
+      ru: 'Общий, p2p',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.prosper.com',
+      ru: 'https://www.prosper.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$25',
+      ru: '$25',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Upstart',
+      ru: 'Upstart',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Educational loans',
+      ru: 'Образовательные кредиты',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.upstart.com',
+      ru: 'https://www.upstart.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '4% to 26%, median — 10.5%; in $',
+      ru: '4% до 26%, медиана — 10,5%; в $',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$500',
+      ru: '$500',
+    },
+  },
+
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'StartEngine',
+      ru: 'StartEngine',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Startups',
+      ru: 'Стартапы',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.startengine.com',
+      ru: 'https://www.startengine.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: 'up to 20% in $',
+      ru: 'до 20% в $',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$25',
+      ru: '$25',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Wefunder',
+      ru: 'Wefunder',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'USA',
+      ru: 'США',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Startups',
+      ru: 'Стартапы',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://wefunder.com',
+      ru: 'https://wefunder.com',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '$100',
+      ru: '$100',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'TownMoney',
+      ru: 'Город денег',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://townmoney.ru',
+      ru: 'https://townmoney.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '20-30% in rubles',
+      ru: '20-30% в рублях',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Penenza',
+      ru: 'Penenza',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'Tender loans',
+      ru: 'Тендерные займы',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://penenza.ru',
+      ru: 'https://penenza.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Rounds',
+      ru: 'Rounds',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://rounds.ru',
+      ru: 'https://rounds.ru',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+  },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Potok Digital',
+      ru: 'Поток Диджитал',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Russia',
+      ru: 'Россия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'General',
+      ru: 'Общая',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://potok.digital',
+      ru: 'https://potok.digital',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '???',
+      ru: '???',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '10 000 rubles',
+      ru: '10 000 рублей',
     },
   },
 ];
