@@ -33,13 +33,18 @@ export const easyInvestPlatformsLines = [
 export const easyInvestPlatformsLinesByLang =
   language => easyInvestPlatformsLines.map(
     platform => {
+      const platformKeys = Object.keys(platform);
       const returnedPlatform =
-        Object.keys(platform).map(
-          platformKey => {
-            const returnedPlatformKey = platform[platformKey][language];
-            // debugger
-            return returnedPlatformKey;
+        platformKeys.reduce(
+          (localizedPlatform: Object , platformKey) => {
+            // const returnedPlatformKey = platform[platformKey][language];
+            debugger
+            if (!localizedPlatform)
+              localizedPlatform = {};
+            localizedPlatform[platformKey] = platform[platformKey][language];
+            return localizedPlatform;
           },
+          {} as Object,
         );
 
       // debugger
