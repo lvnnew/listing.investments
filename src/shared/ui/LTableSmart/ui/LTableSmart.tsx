@@ -54,9 +54,10 @@ export function LTableSmart({ columns, lines }) {
     <>
     <div style={{ width: '100%' }}>
       <DataGrid
-        disableRowSelectionOnClick
         rows={lines}
         columns={columns}
+        autoPageSize
+        disableRowSelectionOnClick
       />
     </div>
     </>

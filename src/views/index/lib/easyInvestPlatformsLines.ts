@@ -16,7 +16,7 @@ export const easyInvestPlatformsLines = [
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
       en: 'https://www.bondora.com',
-      ru: 'https://www.bondora.com',
+      ru: 'https://www.bondora.com/ru',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
       en: '6,81% - 14,81% in euro',
@@ -115,21 +115,23 @@ export const easyInvestPlatformsLines = [
       ru: 'Эстония',
     },
     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
-      en: 'General',
-      ru: 'Общая',
+      en: 'Business lending',
+      ru: 'Кредитование бизнеса',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
-      en: 'https://estateguru.co',
-      ru: 'https://estateguru.co',
+      en: 'https://www.fundingcircle.com/us',
+      // gb: 'https://www.fundingcircle.com/uk',
+      ru: 'https://www.fundingcircle.com',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '???',
-      ru: '???',
+      en: 'Average - 9.3%',
+      ru: 'Средняя - 9,3%',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '500 pounds sterling',
       ru: '500 фунтов стерлингов',
     },
+    trustpilot: 'https://uk.trustpilot.com/review/fundingcircle.com',
   },
   {
     [easyInvestPlatformsEntity.TITLE.fieldKey]: {
@@ -145,8 +147,8 @@ export const easyInvestPlatformsLines = [
       ru: 'Недвижимость',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
-      en: 'https://www.fundingcircle.com',
-      ru: 'https://www.fundingcircle.com',
+      en: 'https://estateguru.co',
+      ru: 'https://estateguru.co/ru/',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
       en: '7% — 13% in euros',
@@ -194,7 +196,7 @@ export const easyInvestPlatformsLines = [
     },
     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
       en: 'General, p2p',
-      ru: 'Общий, p2p',
+      ru: 'Общая, p2p',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
       en: 'https://www.lendingclub.com',
@@ -220,7 +222,7 @@ export const easyInvestPlatformsLines = [
     },
     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
       en: 'General, p2p',
-      ru: 'Общий, p2p',
+      ru: 'Общая, p2p',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
       en: 'https://www.prosper.com',
@@ -402,8 +404,8 @@ export const easyInvestPlatformsLines = [
       ru: 'Россия',
     },
     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
-      en: 'General',
-      ru: 'Общая',
+      en: 'Small business lending',
+      ru: 'Кредитование малого бизнеса',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
       en: 'https://potok.digital',
@@ -427,7 +429,9 @@ export const localizeEasyInvestPlatformsLines =
       const returnedPlatform =
         platformKeys.reduce(
           (localizedPlatform: Object , platformKey) => {
-            localizedPlatform[platformKey] = platform[platformKey][language];
+            localizedPlatform[platformKey] = typeof platform[platformKey] === 'string'
+              ? platform[platformKey]
+              : platform[platformKey][language];
             return localizedPlatform;
           },
           {} as Object,

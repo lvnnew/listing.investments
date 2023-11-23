@@ -4,10 +4,7 @@ import Container from '@mui/material/Container';
 import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
-import {
-  localizeEasyInvestPlatformsLines,
-  easyInvestPlatformsRows,
-} from '@views/index/lib/easyInvestPlatformsLines';
+import { localizeEasyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
   const { i18n, t } = useTranslation('easy-investing');
@@ -24,7 +21,7 @@ export default function IndexTable() {
       headerName: t('tableColumnLabels.TITLE'),
       renderCell: (line, lineIndex) => {
         // console.log(line, lineIndex)
-        return <><Link href={line.row.LINK}>
+        return <><Link href={line.row.LINK} target={'_blank'}>
           {line.row.TITLE}
         </Link></>
       },
@@ -37,6 +34,7 @@ export default function IndexTable() {
     {
       field: 'SPECIALIZATION',
       headerName: t('tableColumnLabels.SPECIALIZATION'),
+      width: 250,
     },
     {
       field: 'MINIMUM_INVEST_AMOUNT',
