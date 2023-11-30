@@ -1,6 +1,11 @@
 {
   "locale": "ru",
   "localeLang": "Русский",
+  "menu": {
+    "RiskyInvestments": "Рисковые инвестиции",
+    "InvestmentsInBali": "В недвижимость на Бали",
+    "InvestmentsInDubai": "В недвижимость в Дубае"
+  },
   "tableColumnLabels": {
     "TITLE": "Название",
     "COUNTRY": "Страна",

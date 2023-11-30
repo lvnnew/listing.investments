@@ -36,12 +36,12 @@ export default function RootLayout({ children }) {
       fontFamily: 'inherit',
     },
   });
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('easy-investing');
 
   const headerSections = [
-    { title: 'Рисковые инвестиции', url: '#' },
-    { title: 'В недвижимость на Бали', url: '#' },
-    { title: 'В недвижимость в Дубае', url: '#' },
+    { title: t('menu.RiskyInvestments'), url: '#' },
+    { title: t('menu.InvestmentsInBali'), url: '#' },
+    { title: t('menu.InvestmentsInDubai'), url: '#' },
   ];
 
   return (
