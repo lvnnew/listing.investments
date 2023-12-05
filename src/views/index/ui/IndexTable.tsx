@@ -1,13 +1,12 @@
 import React  from "react";
-import { useTranslation } from 'next-i18next';
-import Container from '@mui/material/Container';
+import { i18n, useTranslation } from 'next-i18next';
 import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
 import { localizeEasyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
 
 export default function IndexTable() {
-  const { i18n, t } = useTranslation('easy-investing');
+  const { t } = useTranslation('easy-investing');
   const localizedEasyInvestPlatformsLines = localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en')
 
   const columns = [
@@ -50,9 +49,13 @@ export default function IndexTable() {
 
   return (
     <>
-      {/*<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>*/}
-        <LTableSmart columns={columns} lines={localizedEasyInvestPlatformsLines} />
-      {/*</Container>*/}
+      <LTableSmart columns={columns} lines={localizedEasyInvestPlatformsLines} />
+
+      <style jsx global>{`
+        .MuiDataGrid-footerContainer {
+          display: none !important;
+        }
+      `}</style>
     </>
   );
 }

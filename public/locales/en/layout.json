@@ -1,7 +1,13 @@
 {
+  "locale": "en",
+  "localeLang": "English",
   "menu": {
     "RiskyInvestments": "Risky investments",
     "InvestmentsInBali": "Investments in Bali",
     "InvestmentsInDubai": "Investments in Dubai"
+  },
+  "title": "Listing investments",
+  "footer": {
+    "Copyright": "Listing Investments, 2023"
   }
 }

@@ -1,11 +1,7 @@
 {
   "locale": "en",
   "localeLang": "English",
-  "menu": {
-    "RiskyInvestments": "Risky investments",
-    "InvestmentsInBali": "Investments in Bali",
-    "InvestmentsInDubai": "Investments in Dubai"
-  },
+  "title": "Risky investments",
   "tableColumnLabels": {
     "TITLE": "Title",
     "COUNTRY": "Country",
