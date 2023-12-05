@@ -4,6 +4,14 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
+import { Roboto, Inter } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin', 'cyrillic'],
+  variable: '--font-roboto',
+  display: 'swap',
+})
 
 interface HeaderProps {
   sections: ReadonlyArray<{
@@ -28,6 +36,7 @@ export default function LHeaderBlog(props: HeaderProps) {
           align="center"
           noWrap
           sx={{ flex: 1 }}
+          className={roboto.className}
         >
           {title}
         </Typography>
@@ -53,6 +62,7 @@ export default function LHeaderBlog(props: HeaderProps) {
             variant="body2"
             href={section.url}
             sx={{ p: 1, flexShrink: 0 }}
+            className={roboto.className}
           >
             {section.title}
           </Link>

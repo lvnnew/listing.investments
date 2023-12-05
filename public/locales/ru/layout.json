@@ -1,7 +1,13 @@
 {
+  "locale": "ru",
+  "localeLang": "Русский",
   "menu": {
     "RiskyInvestments": "Рисковые инвестиции",
     "InvestmentsInBali": "В недвижимость на Бали",
     "InvestmentsInDubai": "В недвижимость в Дубае"
+  },
+  "title": "Listing investments",
+  "footer": {
+    "Copyright": "Listing Investments, 2023"
   }
 }
