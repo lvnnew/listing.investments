@@ -4,7 +4,8 @@ import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
 import Link from '@mui/material/Link';
-import { Roboto, Inter } from 'next/font/google';
+import { Roboto } from 'next/font/google';
+import NextLink from 'next/link';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -55,17 +56,20 @@ export default function LHeaderBlog(props: HeaderProps) {
         sx={{ justifyContent: 'space-between', overflowX: 'auto', width: '100%' }}
       >
         {sections.map((section) => (
-          <Link
-            color="inherit"
-            noWrap
-            key={section.title}
-            variant="body2"
-            href={section.url}
-            sx={{ p: 1, flexShrink: 0 }}
-            className={roboto.className}
-          >
-            {section.title}
-          </Link>
+          <NextLink href={section.url}>
+            <Link
+              color="inherit"
+              noWrap
+              key={section.title}
+              variant="body2"
+              href={section.url}
+              sx={{ p: 1, flexShrink: 0 }}
+              className={roboto.className}
+            >
+              {section.title}
+            </Link>
+          </NextLink>
+
         ))}
       </Toolbar>
     </>

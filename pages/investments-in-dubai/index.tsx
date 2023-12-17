@@ -1,47 +1,39 @@
 import * as React from 'react';
 import Head from 'next/head';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Container from '@mui/material/Container';
-import { useTranslation } from 'next-i18next';
-import RootLayout from '@views/layout/RootLayout';
-import { IndexTable } from '@views/index';
 import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
+
+import RootLayout from '@views/layout/RootLayout';
+import { LPageInDevelopment } from '@shared/ui/LPageInDevelopment/LPageInDevelopment';
+import { LH1 } from '@shared/ui/LH1/LH1';
 
 type Props = {
   // Add custom props here
 }
 
 const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { t } = useTranslation(['easy-investing', 'layout']);
+  const { t } = useTranslation(['common', 'investments-in-dubai', 'layout']);
 
-  const pageTitle = t('title', { ns: 'easy-investing' });
+  const pageTitle = t('title', { ns: 'investments-in-dubai' });
 
   return (
     <>
       <Head>
         <title>
           {
-            t('title', { ns: 'layout'}) + " | " + pageTitle
+            t('title', { ns: 'layout' }) + " | " + pageTitle
           }
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <RootLayout>
         <Container maxWidth="lg" sx={{ mt: 0, mb: 0 }}>
-          <Typography
-            component="h1"
-            variant="h5"
-            color="inherit"
-            align="center"
-            noWrap
-            sx={{ flex: 1, mb: 4 }}
-          >
-            {
-              pageTitle
-            }
-          </Typography>
+          <LH1>
+            {pageTitle}
+          </LH1>
           <Paper
             sx={{
               p: 2,
@@ -49,7 +41,7 @@ const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               flexDirection: 'column',
             }}
           >
-            <IndexTable />
+            <LPageInDevelopment />
           </Paper>
         </Container>
       </RootLayout>
@@ -63,9 +55,9 @@ export const getStaticProps: GetStaticProps<Props> = async ({
 }) => ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', [
-      'common',
-      'easy-investing',
-      'layout'
+      'investments-in-dubai',
+      'layout',
+      'common'
     ])),
   },
 })

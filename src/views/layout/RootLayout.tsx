@@ -1,33 +1,16 @@
-import React from 'react';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useTranslation } from 'next-i18next';
 import { Container } from '@mui/material';
-import styles from '../../../styles/Home.module.css';
-// import LHeader from './LHeader';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { Roboto } from 'next/font/google';
+
 import LHeaderBlog from '@views/layout/LHeaderBlog';
-import { Roboto, Inter } from 'next/font/google';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
   subsets: ['latin', 'cyrillic'],
   variable: '--font-roboto',
   display: 'swap',
-})
-const inter = Inter({
-  weight: ['100', '300', '400', '500', '700', '900'],
-  subsets: ['latin', 'cyrillic'],
-  variable: '--font-inter',
-  display: 'swap',
-})
-
-
-// export default function MyApp({ Component, pageProps }) {
-//   return (
-//     <main className={roboto.className}>
-//       <Component {...pageProps} />
-//     </main>
-//   )
-// }
+});
 
 export default function RootLayout({ children }) {
   const defaultTheme = createTheme({
@@ -38,9 +21,9 @@ export default function RootLayout({ children }) {
   const { t } = useTranslation('layout');
 
   const headerSections = [
-    { title: t('menu.RiskyInvestments'), url: '#' },
-    { title: t('menu.InvestmentsInBali'), url: '#' },
-    { title: t('menu.InvestmentsInDubai'), url: '#' },
+    { title: t('menu.RiskyInvestments'), url: '/' },
+    { title: t('menu.InvestmentsInBali'), url: '/investments-in-bali' },
+    { title: t('menu.InvestmentsInDubai'), url: '/investments-in-dubai' },
   ];
 
   return (
