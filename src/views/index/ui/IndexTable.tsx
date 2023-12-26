@@ -29,6 +29,7 @@ export default function IndexTable() {
     {
       field: 'COUNTRY',
       headerName: t('tableColumnLabels.COUNTRY'),
+      width: 150,
     },
     {
       field: 'SPECIALIZATION',
