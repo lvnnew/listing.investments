@@ -9,7 +9,7 @@ import Paper from '@mui/material/Paper';
 import { LH1 } from '@shared/ui/LH1';
 import { LOCALES } from '@shared/lib/types/common';
 import RootLayout from '@views/layout/RootLayout';
-import { IndexTable } from '@views/index';
+import { LPageInDevelopment } from '@shared/ui/LPageInDevelopment';
 
 type Props = {
   // Add custom props here
@@ -42,7 +42,7 @@ const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
               flexDirection: 'column',
             }}
           >
-            <IndexTable />
+            <LPageInDevelopment />
           </Paper>
         </Container>
       </RootLayout>
