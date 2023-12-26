@@ -17,7 +17,6 @@ const roboto = Roboto({
 export default function RootLayout({ children }) {
   const router = useRouter();
 
-
   const defaultTheme = createTheme({
     typography: {
       fontFamily: 'inherit',

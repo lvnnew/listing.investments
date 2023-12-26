@@ -2,12 +2,13 @@ import * as React from 'react';
 import Head from 'next/head';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import Container from '@mui/material/Container';
 import { useTranslation } from 'next-i18next';
-import RootLayout from '@views/layout/RootLayout';
-import { IndexTable } from '@views/index';
+import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+
+import RootLayout from '@views/layout/RootLayout';
+import { IndexTable } from '@views/index';
 
 type Props = {
   // Add custom props here
