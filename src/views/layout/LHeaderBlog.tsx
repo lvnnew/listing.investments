@@ -1,11 +1,11 @@
 import Toolbar from '@mui/material/Toolbar';
+import { Roboto } from 'next/font/google';
+import NextLink from 'next/link';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import SearchIcon from '@mui/icons-material/Search';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
-import { Roboto } from 'next/font/google';
-import NextLink from 'next/link';
+import MLink from '@mui/material/Link';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -56,21 +56,20 @@ export default function LHeaderBlog(props: HeaderProps) {
         sx={{ justifyContent: 'space-between', overflowX: 'auto', width: '100%' }}
       >
         {sections.map((section) => (
-          <NextLink href={section.url}>
-            <Link
-              color="inherit"
-              noWrap
-              key={section.title}
-              variant="body2"
-              href={section.url}
-              sx={{ p: 1, flexShrink: 0 }}
-              className={roboto.className}
-            >
-              {section.title}
-            </Link>
-          </NextLink>
+          <MLink
+            key={section.url}
+            href={section.url}
+            component={NextLink}
 
-        ))}
+            color="inherit"
+            noWrap
+            variant="body2"
+            sx={{ p: 1, flexShrink: 0 }}
+            className={roboto.className}
+          >
+            {section.title}
+          </MLink>
+          ))}
       </Toolbar>
     </>
   );

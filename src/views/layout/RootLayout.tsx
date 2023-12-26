@@ -2,8 +2,10 @@ import { useTranslation } from 'next-i18next';
 import { Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Roboto } from 'next/font/google';
+import { useRouter } from 'next/router';
 
 import LHeaderBlog from '@views/layout/LHeaderBlog';
+import { LOCALES } from '@shared/lib/types/common';
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -13,6 +15,9 @@ const roboto = Roboto({
 });
 
 export default function RootLayout({ children }) {
+  const router = useRouter();
+
+
   const defaultTheme = createTheme({
     typography: {
       fontFamily: 'inherit',
@@ -20,10 +25,14 @@ export default function RootLayout({ children }) {
   });
   const { t } = useTranslation('layout');
 
+  const urlLocalePrefix = router.locale === LOCALES.EN
+    ? ``
+    : `/${router.locale}`;
+
   const headerSections = [
-    { title: t('menu.RiskyInvestments'), url: '/' },
-    { title: t('menu.InvestmentsInBali'), url: '/investments-in-bali' },
-    { title: t('menu.InvestmentsInDubai'), url: '/investments-in-dubai' },
+    { title: t('menu.RiskyInvestments'), url: `${urlLocalePrefix}/` },
+    { title: t('menu.InvestmentsInBali'), url: `${urlLocalePrefix}/investments-in-bali` },
+    { title: t('menu.InvestmentsInDubai'), url:  `${urlLocalePrefix}/investments-in-dubai` },
   ];
 
   return (
