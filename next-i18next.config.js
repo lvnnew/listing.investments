@@ -1,6 +1,7 @@
 // const path = require('path');
 
 module.exports = {
+  target: 'serverless',
   i18n: {
     locales: ["default", "en", "ru"],
     // localePath: path.resolve('./public/locales'),
