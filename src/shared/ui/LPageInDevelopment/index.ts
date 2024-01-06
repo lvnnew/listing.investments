@@ -1,1 +1,1 @@
-export { LPageInDevelopment } from './LPageInDevelopment.tsx';
+export { LPageInDevelopment } from './LPageInDevelopment';

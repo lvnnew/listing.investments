@@ -1,8 +1,8 @@
 import cookie from "cookie";
 import * as process from "process";
 
-import { JwtAccess, JwtRefresh } from "../types/common";
-import { parseJwt } from "../auth/jwt";
+// import { JwtAccess, JwtRefresh } from "../types/common";
+// import { parseJwt } from "../auth/jwt";
 
 function cookiesConfig(): cookie.CookieSerializeOptions {
   const baseConfig: cookie.CookieSerializeOptions = {
@@ -22,14 +22,14 @@ function cookiesConfig(): cookie.CookieSerializeOptions {
 }
 
 export function cookiesConfigWithExpires(token: string): cookie.CookieSerializeOptions {
-  const { exp: expirationTimestamp } = parseJwt(token, { header: true }) as JwtAccess | JwtRefresh;
+  // const { exp: expirationTimestamp } = parseJwt(token, { header: true }) as JwtAccess | JwtRefresh;
 
   const config = cookiesConfig();
-  const expires = new Date(expirationTimestamp * 1000);
+  // const expires = new Date(expirationTimestamp * 1000);
 
   return {
     ...config,
-    expires,
-    maxAge: Number(expires),
+    // expires,
+    // maxAge: Number(expires),
   };
 }

@@ -14,4 +14,7 @@ module.exports = {
       : '/locales',
 
   reloadOnPrerender: process.env.NODE_ENV === 'development',
+  experimental: {
+    webpackBuildWorker: true,
+  },
 };

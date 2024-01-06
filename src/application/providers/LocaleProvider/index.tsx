@@ -1,1 +1,1 @@
-export { LocaleProvider } from './ui/LocaleProvider.tsx';
+export { LocaleProvider } from './ui/LocaleProvider';

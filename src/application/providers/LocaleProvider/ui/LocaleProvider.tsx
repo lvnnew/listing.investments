@@ -4,6 +4,7 @@ import { LocaleContext } from "../lib/LocaleContext";
 
 interface LocalizationProviderProps {
   children?: ReactNode;
+  locale: any;
 }
 
 export const LocaleProvider = ({ locale, children }: LocalizationProviderProps) => (

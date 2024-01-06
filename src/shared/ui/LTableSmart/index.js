@@ -1,1 +1,1 @@
-export { LTableSmart } from './ui/LTableSmart.tsx';
+export { LTableSmart } from './ui/LTableSmart';

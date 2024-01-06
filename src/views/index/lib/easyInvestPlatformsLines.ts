@@ -444,6 +444,7 @@ export const localizeEasyInvestPlatformsLines =
           {} as Object,
         );
 
+      // @ts-ignore
       returnedPlatform.id = platformIndex + 1;
       return returnedPlatform;
     },

@@ -1,3 +1,3 @@
-import IndexTable from './ui/IndexTable.tsx';
+import IndexTable from './ui/IndexTable';
 
 export { IndexTable };

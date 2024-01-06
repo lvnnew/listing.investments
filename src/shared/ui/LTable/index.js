@@ -1,1 +1,1 @@
-export { LTable } from './ui/LTable.tsx';
+export { LTable } from './ui/LTable';

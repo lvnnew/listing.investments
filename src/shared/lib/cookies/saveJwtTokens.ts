@@ -1,20 +1,20 @@
-import { NextApiResponse } from "next";
-import cookie from "cookie";
+// import { NextApiResponse } from "next";
+// import cookie from "cookie";
 
-import { setCookie, splitJwtToken } from "./cookies";
-import { ACCESS_TOKEN, COOKIES, REFRESH_TOKEN, SplitJwtToken } from "../types/common";
-import { cookiesConfigWithExpires } from "./cookiesConfig";
+// import { setCookie, splitJwtToken } from "./cookies";
+// import { ACCESS_TOKEN, COOKIES, REFRESH_TOKEN, SplitJwtToken } from "../types/common";
+// import { cookiesConfigWithExpires } from "./cookiesConfig";
 
-export interface TokenData {
-  accessToken: string;
-  refreshToken: string;
-}
+// export interface TokenData {
+//   accessToken: string;
+//   refreshToken: string;
+// }
 
-export function saveJwtGuestTokens(guestToken: string) {
-  setCookie(COOKIES.GUEST_TOKEN, guestToken);
-}
+// export function saveJwtGuestTokens(guestToken: string) {
+//   setCookie(COOKIES.GUEST_TOKEN, guestToken);
+// }
 
-export function setCookieViaProxy(res: NextApiResponse, { accessToken, refreshToken }: TokenData) {
+/*export function setCookieViaProxy(res: NextApiResponse, { accessToken, refreshToken }: TokenData) {
   const cookies: string[] = [];
   const tokenData: Record<string, SplitJwtToken> = {
     accessToken: splitJwtToken(accessToken),
@@ -23,7 +23,7 @@ export function setCookieViaProxy(res: NextApiResponse, { accessToken, refreshTo
 
   // eslint-disable-next-line guard-for-in
   for (const tokenType in tokenData) {
-    const token: SplitJwtToken = tokenData[tokenType];
+    // const token: SplitJwtToken = tokenData[tokenType];
     const config = cookiesConfigWithExpires(token.BODY);
 
     // eslint-disable-next-line guard-for-in
@@ -40,9 +40,10 @@ export function setCookieViaProxy(res: NextApiResponse, { accessToken, refreshTo
 
   res.setHeader("Set-Cookie", [
     ...cookies,
-    cookie.serialize(COOKIES.GUEST_TOKEN, "", {
-      path: "/",
-      maxAge: -1,
-    }),
+    // cookie.serialize(COOKIES.GUEST_TOKEN, "", {
+    //   path: "/",
+    //   maxAge: -1,
+    // }),
   ]);
 }
+*/
