@@ -1,13 +1,12 @@
-import React  from "react";
 import { i18n, useTranslation } from 'next-i18next';
 import Link from '@mui/material/Link';
 
 import { LTableSmart } from '@shared/ui/LTableSmart';
-import { localizeEasyInvestPlatformsLines } from '@views/index/lib/easyInvestPlatformsLines';
+import { localizeMFOLines } from './lib/MFOLines';
 
-export default function IndexTable() {
-  const { t } = useTranslation('easy-investing');
-  const localizedEasyInvestPlatformsLines = localizeEasyInvestPlatformsLines(i18n?.resolvedLanguage || 'en')
+export function InvestmentsInMFOTable() {
+  const { t } = useTranslation('common-invest-table');
+  const localizedEasyInvestPlatformsLines = localizeMFOLines(i18n?.resolvedLanguage || 'en');
 
   const columns = [
     {
@@ -17,7 +16,7 @@ export default function IndexTable() {
     },
     {
       field: 'TITLE',
-      headerName: t('tableColumnLabels.TITLE'),
+      headerName: t('columnLabels.TITLE'),
       renderCell: (line, lineIndex) => {
         // console.log(line, lineIndex)
         return <><Link href={line.row.LINK} target={'_blank'}>
@@ -28,22 +27,22 @@ export default function IndexTable() {
     },
     {
       field: 'COUNTRY',
-      headerName: t('tableColumnLabels.COUNTRY'),
+      headerName: t('columnLabels.COUNTRY'),
       width: 150,
     },
-    {
-      field: 'SPECIALIZATION',
-      headerName: t('tableColumnLabels.SPECIALIZATION'),
-      width: 250,
-    },
+    // {
+    //   field: 'SPECIALIZATION',
+    //   headerName: t('columnLabels.SPECIALIZATION'),
+    //   width: 250,
+    // },
     {
       field: 'MINIMUM_INVEST_AMOUNT',
-      headerName: t('tableColumnLabels.MINIMUM_INVEST_AMOUNT'),
+      headerName: t('columnLabels.MINIMUM_INVEST_AMOUNT'),
       width: 200,
     },
     {
       field: 'PROFITABILITY',
-      headerName: t('tableColumnLabels.PROFITABILITY'),
+      headerName: t('columnLabels.PROFITABILITY'),
       width: 250,
     },
   ];

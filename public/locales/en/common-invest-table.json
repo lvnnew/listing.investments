@@ -1,8 +1,5 @@
 {
-  "locale": "en",
-  "localeLang": "English",
-  "title": "P2P and P2B loans",
-  "tableColumnLabels": {
+  "columnLabels": {
     "TITLE": "Title",
     "COUNTRY": "Country",
     "SPECIALIZATION": "Specialization",

@@ -1,7 +1,6 @@
 // const path = require('path');
 
 module.exports = {
-  target: 'serverless',
   i18n: {
     locales: ["default", "en", "ru"],
     // localePath: path.resolve('./public/locales'),
@@ -15,7 +14,4 @@ module.exports = {
       : '/locales',
 
   reloadOnPrerender: process.env.NODE_ENV === 'development',
-  experimental: {
-    webpackBuildWorker: true,
-  },
 };

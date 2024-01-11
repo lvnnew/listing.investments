@@ -19,11 +19,11 @@ export const easyInvestPlatformsLines = [
       ru: 'https://www.bondora.com/ru',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '6,81% - 14,81% in euro',
-      ru: '6,81% - 14,81% в евро',
+      en: '6,81%–14,81% in euros',
+      ru: '6,81%–14,81% в евро',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
-      en: '10 euro',
+      en: '10 euros',
       ru: '10 евро',
     },
   },
@@ -45,8 +45,8 @@ export const easyInvestPlatformsLines = [
       ru: 'https://jetlend.ru',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '17,9% — 53,8% in rubles',
-      ru: '17,9% — 53,8% в рублях',
+      en: '17,9%–53,8% in rubles',
+      ru: '17,9%–53,8% в рублях',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '100 rubles',
@@ -155,11 +155,11 @@ export const easyInvestPlatformsLines = [
       ru: 'https://estateguru.co/ru/',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '7% — 13% in euros',
-      ru: '7% — 13% в евро',
+      en: '7%–13% in euros',
+      ru: '7%–13% в евро',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
-      en: '100 euro',
+      en: '100 euros',
       ru: '100 евро',
     },
   },
@@ -234,8 +234,8 @@ export const easyInvestPlatformsLines = [
       ru: 'https://www.prosper.com',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '3.5% to 9.6% in $',
-      ru: '3.5% до 9.6% в $',
+      en: '3.5%–9.6% in $',
+      ru: '3.5%–9.6% в $',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '$25',
@@ -260,8 +260,8 @@ export const easyInvestPlatformsLines = [
       ru: 'https://www.upstart.com',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: '4% to 26%, median — 10.5%; in $',
-      ru: '4% до 26%, медиана — 10,5%; в $',
+      en: '4%–26%, median — 10.5%; in $',
+      ru: '4%–26%, медиана — 10,5%; в $',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '$500',
@@ -287,8 +287,8 @@ export const easyInvestPlatformsLines = [
       ru: 'https://www.startengine.com',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
-      en: 'up to 20% in $',
-      ru: 'до 20% в $',
+      en: 'Up to 20% in $',
+      ru: 'До 20% в $',
     },
     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
       en: '$25',
@@ -336,8 +336,8 @@ export const easyInvestPlatformsLines = [
       ru: 'Общая',
     },
     [easyInvestPlatformsEntity.LINK.fieldKey]: {
-      en: 'https://townmoney.ru',
-      ru: 'https://townmoney.ru',
+      en: 'https://townmoney.ru/investor.html',
+      ru: 'https://townmoney.ru/investor.html',
     },
     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
       en: '20-30% in rubles',
@@ -427,6 +427,32 @@ export const easyInvestPlatformsLines = [
       ru: '10 000 рублей',
     },
   },
+  {
+    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+      en: 'Mintos',
+      ru: 'Mintos',
+    },
+    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: {
+      en: 'Latvia',
+      ru: 'Латвия',
+    },
+    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: {
+      en: 'P2P lending',
+      ru: 'P2P кредитование',
+    },
+    [easyInvestPlatformsEntity.LINK.fieldKey]: {
+      en: 'https://www.mintos.com/en/investing-in-loans/',
+      ru: 'https://www.mintos.com/ru/investing-in-loans/',
+    },
+    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: {
+      en: '5%-21% in euros or other 9 currencies',
+      ru: '5%-21% в евро или других 9 валютах',
+    },
+    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: {
+      en: '10 euros',
+      ru: '10 евро',
+    },
+  },
 ];
 
 export const localizeEasyInvestPlatformsLines =
@@ -450,35 +476,35 @@ export const localizeEasyInvestPlatformsLines =
     },
   );
 
-export const easyInvestPlatformsRows = [
-  {
-    id: 1,
-    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
-      en: 'Bondora',
-      ru: 'Bondora',
-    },
-    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Estonia',
-    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'General',
-    [easyInvestPlatformsEntity.LINK.fieldKey]: {
-      en: 'https://www.bondora.com',
-      ru: 'https://www.bondora.com',
-    },
-    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: '6,81% - 14,81% in euro',
-    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: '10 euro',
-  },
-  {
-    id: 2,
-    [easyInvestPlatformsEntity.TITLE.fieldKey]: {
-      en: 'JetLend',
-      ru: 'JetLend',
-    },
-    [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Estonia',
-    [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'General',
-    [easyInvestPlatformsEntity.LINK.fieldKey]: {
-      en: 'https://www.bondora.com',
-      ru: 'https://www.bondora.com',
-    },
-    [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: '6,81% - 14,81% in euro',
-    [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: '10 euro',
-  },
-];
+// export const easyInvestPlatformsRows = [
+//   {
+//     id: 1,
+//     [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+//       en: 'Bondora',
+//       ru: 'Bondora',
+//     },
+//     [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Estonia',
+//     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'General',
+//     [easyInvestPlatformsEntity.LINK.fieldKey]: {
+//       en: 'https://www.bondora.com',
+//       ru: 'https://www.bondora.com',
+//     },
+//     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: '6,81% - 14,81% in euros',
+//     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: '10 euros',
+//   },
+//   {
+//     id: 2,
+//     [easyInvestPlatformsEntity.TITLE.fieldKey]: {
+//       en: 'JetLend',
+//       ru: 'JetLend',
+//     },
+//     [easyInvestPlatformsEntity.COUNTRY.fieldKey]: 'Estonia',
+//     [easyInvestPlatformsEntity.SPECIALIZATION.fieldKey]: 'General',
+//     [easyInvestPlatformsEntity.LINK.fieldKey]: {
+//       en: 'https://www.bondora.com',
+//       ru: 'https://www.bondora.com',
+//     },
+//     [easyInvestPlatformsEntity.PROFITABILITY.fieldKey]: '6,81% - 14,81% in euros',
+//     [easyInvestPlatformsEntity.MINIMUM_INVEST_AMOUNT.fieldKey]: '10 euros',
+//   },
+// ];

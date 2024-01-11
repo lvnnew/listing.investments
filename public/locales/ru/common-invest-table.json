@@ -1,8 +1,5 @@
 {
-  "locale": "ru",
-  "localeLang": "Русский",
-  "title": "P2P и P2B займы",
-  "tableColumnLabels": {
+  "columnLabels": {
     "TITLE": "Название",
     "COUNTRY": "Страна",
     "SPECIALIZATION": "Специализация",

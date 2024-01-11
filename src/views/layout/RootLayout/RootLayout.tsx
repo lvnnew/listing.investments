@@ -1,20 +1,16 @@
 import { useTranslation } from 'next-i18next';
 import { Container } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { Roboto } from 'next/font/google';
 import { useRouter } from 'next/router';
 
-import LHeaderBlog from '@views/layout/LHeaderBlog';
+import { MAIN_FONT_CLASSNAME } from '@application/helpers/fonts';
 import { LOCALES } from '@shared/lib/types/common';
+import { LH1 } from '@shared/ui/LH1';
+import { LPaper } from '@shared/ui/LPaper';
+import LHeaderTitle from '@views/layout/RootLayout/components/LHeaderTitle';
+import { IHeaderLinkButton } from '@views/layout/RootLayout/types';
 
-const roboto = Roboto({
-  weight: ['100', '300', '400', '500', '700', '900'],
-  subsets: ['latin', 'cyrillic'],
-  variable: '--font-roboto',
-  display: 'swap',
-});
-
-export default function RootLayout({ children }) {
+export function RootLayout({ children, pageTitle }) {
   const router = useRouter();
 
   const defaultTheme = createTheme({
@@ -28,15 +24,18 @@ export default function RootLayout({ children }) {
     ? ``
     : `/${router.locale}`;
 
-  const headerSections = [
-    { title: t('menu.RiskyInvestments'), url: `${urlLocalePrefix}/` },
-    { title: t('menu.InvestmentsInBali'), url: `${urlLocalePrefix}/investments-in-bali` },
-    { title: t('menu.InvestmentsInDubai'), url:  `${urlLocalePrefix}/investments-in-dubai` },
+  const headerLinkButtons: IHeaderLinkButton[] = [
+    { title: t('menu.RiskyInvestments'), url: `${urlLocalePrefix}/investments-in-loans` },
+    { title: t('menu.InvestmentsInMFO'), url: `${urlLocalePrefix}/investments-in-microfinance-organizations` },
+    { title: t('menu.InRealEstate'), linkList: [
+      { title: t('menu.InvestmentsInBali'), url: `${urlLocalePrefix}/investments-in-bali` },
+      { title: t('menu.InvestmentsInDubai'), url: `${urlLocalePrefix}/investments-in-dubai` },
+    ] },
   ];
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <div className={roboto.className} style={{
+      <div className={MAIN_FONT_CLASSNAME} style={{
         backgroundColor: defaultTheme.palette.mode === 'light'
           ? defaultTheme.palette.grey[100]
           : defaultTheme.palette.grey[900],
@@ -44,18 +43,25 @@ export default function RootLayout({ children }) {
       }}>
         <Container maxWidth="lg">
           <main>
-            <LHeaderBlog title={t('title')} sections={headerSections} />
+            <LHeaderTitle title={t('title')} linkButtons={headerLinkButtons} />
 
-            {children}
+            <Container maxWidth="lg" sx={{ mt: 0, mb: 0 }}>
+              <LH1>
+                {pageTitle}
+              </LH1>
+              <LPaper>
+                {children}
+              </LPaper>
+            </Container>
 
             <footer>
-              <a
-                href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {t('footer.Copyright')}
-              </a>
+              {t('footer.Copyright')}
+              {/*<a*/}
+              {/*  href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"*/}
+              {/*  target="_blank"*/}
+              {/*  rel="noopener noreferrer"*/}
+              {/*>*/}
+              {/*</a>*/}
             </footer>
           </main>
         </Container>
@@ -97,15 +103,17 @@ export default function RootLayout({ children }) {
       `}</style>
 
       <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-        }
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      html,
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+    `}</style>
     </ThemeProvider>
   );
 }
+
+export default RootLayout;
