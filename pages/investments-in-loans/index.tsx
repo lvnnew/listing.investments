@@ -1,20 +1,23 @@
+import * as React from 'react';
 import Head from 'next/head';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
-import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
-import { LOCALES } from '@shared/lib/types/common';
-import { LPageInDevelopment } from '@shared/ui/LPageInDevelopment';
+import { LPaper } from '@shared/ui/LPaper';
 import RootLayout from '@views/layout/RootLayout/RootLayout';
+import { InvestmentsInLoansTable } from '@views/investments-in-loans';
 
 type Props = {
   // Add custom props here
 }
 
-const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { t } = useTranslation(['investments-in-bali', 'layout']);
+const InvestmentsInLoans = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { t } = useTranslation(['investments-in-loans', 'layout']);
 
-  const pageTitle = t('title', { ns: 'investments-in-bali' });
+  const pageTitle = t('title', { ns: 'investments-in-loans' });
 
   return (
     <>
@@ -27,7 +30,7 @@ const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <RootLayout pageTitle={pageTitle}>
-        <LPageInDevelopment />
+        <InvestmentsInLoansTable />
       </RootLayout>
     </>
   );
@@ -38,12 +41,12 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   locale,
 }) => ({
   props: {
-    ...(await serverSideTranslations(locale ?? LOCALES.EN, [
+    ...(await serverSideTranslations(locale ?? 'en', [
       'common',
-      'investments-in-bali',
+      'investments-in-loans',
       'layout'
     ])),
   },
 })
 
-export default Index;
+export default InvestmentsInLoans;

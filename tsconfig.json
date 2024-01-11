@@ -24,14 +24,25 @@
     "strictNullChecks": true,
     "baseUrl": "src",
     "paths": {
-      "@config": [
-        "config.js"
-      ],
       "@styles/*": [
         "application/styles/*"
       ],
-      "@sharedViews/*": [
-        "shared/views/*"
+//      "@config": [
+//        "config.js"
+//      ],
+//      "@sharedViews/*": [
+//        "shared/views/*"
+//      ],
+//      "@widgets/*": [
+//        "shared/widgets/*"
+//      ],
+
+
+      "@application/*": [
+        "application/*"
+      ],
+      "@entities/*": [
+        "entities/*"
       ],
       "@shared/*": [
         "shared/*"
@@ -39,63 +50,14 @@
       "@views/*": [
         "views/*"
       ],
-      "@widgets/*": [
-        "shared/widgets/*"
-      ],
-      "@application/*": [
-        "application/*"
-      ],
-      "@entities/*": [
-        "shared/entities/*"
-      ],
-      "@features/*": [
-        "shared/features/*"
-      ],
+
       "@layout/*": [
-        "layout/*"
+        "views/layout/*"
       ],
+
       "@public/*": [
         "../public/*"
       ],
-      "@/public/*": [
-        "../public/*"
-      ],
-      "@/config": [
-        "config.js"
-      ],
-      "@/context/*": [
-        "context/*"
-      ],
-      "@/styles/*": [
-        "application/styles/*"
-      ],
-      "@/store/*": [
-        "store/*"
-      ],
-      "@/views/*": [
-        "shared/views/*"
-      ],
-      "@/shared/*": [
-        "shared/*"
-      ],
-      "@/widgets/*": [
-        "shared/widgets/*"
-      ],
-      "@/application/*": [
-        "application/*"
-      ],
-      "@/entities/*": [
-        "shared/entities/*"
-      ],
-      "@/features/*": [
-        "shared/features/*"
-      ],
-      "@/areas/*": [
-        "areas/*"
-      ],
-      "@/layout/*": [
-        "layout/*"
-      ]
     }
   },
   "include": [

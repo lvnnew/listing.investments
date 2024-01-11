@@ -2,9 +2,11 @@
   "locale": "en",
   "localeLang": "English",
   "menu": {
-    "RiskyInvestments": "P2P and P2B loans",
-    "InvestmentsInBali": "Investments in Bali",
-    "InvestmentsInDubai": "Investments in Dubai"
+    "RiskyInvestments": "In P2P and P2B loans",
+    "InvestmentsInMFO": "In microfinance organizations",
+    "InRealEstate": "Real Estate Investments",
+    "InvestmentsInBali": "In Bali",
+    "InvestmentsInDubai": "In Dubai"
   },
   "title": "Listing investments",
   "footer": {

@@ -1,58 +1,31 @@
 import * as React from 'react';
-import Head from 'next/head';
+import { useTranslation } from 'next-i18next';
 import type { GetStaticProps, InferGetStaticPropsType } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { useTranslation } from 'next-i18next';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-
-import RootLayout from '@views/layout/RootLayout';
-import { IndexTable } from '@views/index';
+import Head from 'next/head';
+import { RootLayout } from '@layout/RootLayout';
 
 type Props = {
   // Add custom props here
 }
 
 const Index = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const { t } = useTranslation(['easy-investing', 'layout']);
+  const { t } = useTranslation(['common', 'layout', 'index']);
 
-  const pageTitle = t('title', { ns: 'easy-investing' });
+  const pageTitle = t('title', { ns: 'index' });
 
   return (
     <>
       <Head>
         <title>
           {
-            t('title', { ns: 'layout'}) + " | " + pageTitle
+            t('title', { ns: 'layout' }) + " | " + pageTitle
           }
         </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <RootLayout>
-        <Container maxWidth="lg" sx={{ mt: 0, mb: 0 }}>
-          <Typography
-            component="h1"
-            variant="h5"
-            color="inherit"
-            align="center"
-            noWrap
-            sx={{ flex: 1, mb: 4 }}
-          >
-            {
-              pageTitle
-            }
-          </Typography>
-          <Paper
-            sx={{
-              p: 2,
-              display: 'flex',
-              flexDirection: 'column',
-            }}
-          >
-            <IndexTable />
-          </Paper>
-        </Container>
+      <RootLayout pageTitle={pageTitle}>
+        ---
       </RootLayout>
     </>
   );
@@ -65,8 +38,8 @@ export const getStaticProps: GetStaticProps<Props> = async ({
   props: {
     ...(await serverSideTranslations(locale ?? 'en', [
       'common',
-      'easy-investing',
-      'layout'
+      'layout',
+      'index',
     ])),
   },
 })

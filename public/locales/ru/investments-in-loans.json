@@ -1,0 +1,12 @@
+{
+  "locale": "ru",
+  "localeLang": "Русский",
+  "title": "Инвестиции в P2P и P2B займы",
+  "tableColumnLabels": {
+    "TITLE": "Название",
+    "COUNTRY": "Страна",
+    "SPECIALIZATION": "Специализация",
+    "PROFITABILITY": "Доходность",
+    "MINIMUM_INVEST_AMOUNT": "Минимальная сумма инвестиций"
+  }
+}

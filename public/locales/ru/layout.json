@@ -2,12 +2,14 @@
   "locale": "ru",
   "localeLang": "Русский",
   "menu": {
-    "RiskyInvestments": "P2P и P2B займы",
-    "InvestmentsInBali": "В недвижимость на Бали",
-    "InvestmentsInDubai": "В недвижимость в Дубае"
+    "RiskyInvestments": "В P2P и P2B займы",
+    "InvestmentsInMFO": "В МФО",
+    "InRealEstate": "В недвижимость",
+    "InvestmentsInBali": "На Бали",
+    "InvestmentsInDubai": "В Дубае"
   },
   "title": "Listing investments",
   "footer": {
-    "Copyright": "Listing Investments, 2023"
+    "Copyright": "Listing Investments, 2023-2024"
   }
 }

@@ -1,3 +1,8 @@
+/**
+ * Пример взят отсюда:
+ * https://mui.com/material-ui/getting-started/templates/
+ */
+
 import * as React from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,7 +22,7 @@ import Link from '@mui/material/Link';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
+import { mainListItems, secondaryListItems } from '../../src/components/listItems';
 const Chart = <></>;
 const Deposits = <></>;
 const Orders = <></>;
